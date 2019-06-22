@@ -52,7 +52,27 @@
         a:hover{
             color:cadetblue;
         }
-       
+        /* 相邻兄弟选择器 */
+        /* .aa + .bb{
+            color:plum;
+        } */
+        /* 群组选择器  分组 */
+        .aa,.bb,.cc{
+            color:springgreen;
+        }
+        /* 伪元素选择器  */
+        .dd::before{
+            content:'haha';
+            color:red;
+        }
+
+        
+
+
+
+
+
+
     </style>
 </head>
 
@@ -77,7 +97,7 @@
         <li class="list">4444</li>
     </ul>
 
-    <p class="list">sdfghljlkjh</p>
+    <p class="list1">sdfghljlkjh</p>
     <div class="parent">
         11111
         <div>
@@ -98,6 +118,14 @@
         <p>33333</p>
     </div> -->
     <a href="http://www.baidu.com">baidu </a>
+
+    <div class="aa">aaaaaa</div>
+    <div class="bb">bbbb</div>
+    <div class="bb">bbbb</div>
+    <p class="cc">bbbb</p>
+    <div class="dd">
+        ddddd
+    </div>
 
 
 
