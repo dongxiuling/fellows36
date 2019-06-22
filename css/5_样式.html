@@ -9,10 +9,15 @@
         /* 雪碧图  css精灵 */
         .div1{
             /* background: red; */
-            /* background-color: red;
+            /* 背景颜色 */
+            background-color: red;
+            /* 背景图片  通过url()引入图片地址 */
             background-image: url(../images/bbb.jpg);
+            /* 背景图片重复  repeat 和 no-repeat两个值   */
             background-repeat: no-repeat;
-            background-position: -150px -100px; */
+             /* 背景图片位置 第一个值水平方向（正值右移）  第二个值垂直方向（正值下移）   */
+            background-position: -150px -100px; 
+            /* 合并写法  */
             background: red url(../images/bbb.jpg) no-repeat -150px -100px;
             background-color: green;
             height:500px;
@@ -37,11 +42,11 @@
             line-height: 100px;
         }
         a{
-            /* 去掉下划线 
-                none 
-                underline
-                overline
-                line-through  
+            /* 文本装饰  
+                none 去掉下划线 
+                underline  下划线
+                overline   上划线
+                line-through   贯穿线
             */
             text-decoration: none;
         }
