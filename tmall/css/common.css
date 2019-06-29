@@ -1,0 +1,11 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/* 公共样式 用来居中  */
+.wrapper{
+    width: 1230px;
+    margin:0 auto;
+    background: #0000ff;
+    height: 32px;
+}
