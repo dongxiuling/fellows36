@@ -2,10 +2,14 @@
     margin: 0;
     padding: 0;
 }
+body{
+    font: 12px/1.5 tahoma,arial,"\5b8b\4f53";
+    -webkit-font-smoothing: antialiased;
+}
 /* 公共样式 用来居中  */
 .wrapper{
     width: 1230px;
     margin:0 auto;
-    background: #0000ff;
-    height: 32px;
+    /* background: #0000ff;
+    height: 32px; */
 }
