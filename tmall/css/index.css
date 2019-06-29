@@ -1,17 +1,39 @@
+/* header 开始 */
 #header{
     height: 32px;
+    line-height: 32px;
     background: #a9180a;
-    border:1px solid #a9180a;
+    border-bottom:1px solid #a9180a;
 }
 .header-login{
+    background: #0f0;
     height: 32px;
-    line-height: 32px;
+    /* line-height: 32px; */
+    float: left;
 }
 .header-login span,.header-login a{
     color:#fff;
     font-size: 12px;
 }
 .header-login a{
+    /* 去掉a标签的下划线 */
     text-decoration: none;
     padding:0 10px 0 20px;
 }
+.header-list{
+    float:right;
+    /* background: #00ffff; */
+}
+/* 子代选择器 */
+.header-list > li{
+    float: left;
+    padding:0 14px 0 10px;
+    /* background: #ff0000; */
+}
+.header-list > li > a{
+    color:#fff;
+}
+
+
+/* header 结束 */
+
