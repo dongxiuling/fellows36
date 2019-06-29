@@ -33,7 +33,38 @@
 .header-list > li > a{
     color:#fff;
 }
-
+.list-arrow{
+    /*  */
+    position: relative;
+}
+.sub-list{
+    position: absolute;
+    left:0px;
+    top:32px;
+    background: #fff;
+    padding: 10px;
+    border:1px solid #ccc;
+    border-top:none;
+    display: none;
+}
+.sub-list-tb{
+    width:72px;
+    line-height: 20px;
+}
+.sub-list > li > a{
+    color:#999;
+}
+/* class名为.list-arrow 的li  hover的时候  找到它里边class名为sub-list 的ul 显示 */
+.list-arrow:hover .sub-list{
+    display: block;
+}
+.list-arrow:hover{
+    background: #fff;
+}
+.list-arrow:hover > a{
+    color:#ff0036;
+    text-decoration: underline;
+}
 
 /* header 结束 */
 
