@@ -78,6 +78,48 @@
     font-size:12px;
     color:greenyellow;
 }
-
 /* header 结束 */
+/* 搜索 开始 */
+.logo{
+    width: 240px;
+    height: 130px;
+    float: left;
+}
+.search-box{
+    float: left;
+    margin-left:125px;
+    margin-top:38px;
+}
+.search-content{
+    width: 623px;
+    height: 36px;
+    border:2px solid #ff0036;
+}
+.search-input{
+    width: 491px;
+    height: 36px;
+    border:none;
+    /* 输入框 选中样式   */
+    outline: none;
+    text-indent: 5px;
+    float: left;
+}
+
+/* 623 491 132 */
+.search-btn{
+    width: 132px;
+    height: 36px;
+    background: #ff0036;
+    border:none;
+    float: left;
+    font-size: 18px;
+    font-weight: 700;
+    color:#fff;
+    /* 文字之前空隙 */
+    letter-spacing: 5px;
+}
+
+
+
+/* 搜索 结束 */
 
