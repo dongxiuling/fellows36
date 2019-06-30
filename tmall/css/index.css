@@ -142,8 +142,28 @@
 .search-list li.list-hot a{
     color:#ff0036;
 }
-
-
-
 /* 搜索 结束 */
+/* nav 开始  */
+.nav{
+    padding-left:200px;
+    width:1030px;
+    /* background: #000; */
+}
+.nav li{
+    float: left;
+}
+.nav li img{
+    width: 100px;
+    height: 30px;
+    margin-top:3px;
+}
+.nav a{
+    color:#333;
+    font-size: 16px;
+    font-weight:500;
+    display: block;
+    height: 35px;
+    line-height: 35px;
+    padding:0 8px;
+}
 
