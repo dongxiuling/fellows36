@@ -65,6 +65,11 @@
     color:#ff0036;
     text-decoration: underline;
 }
+/* lihover 箭头转 */
+.list-arrow:hover .arrow {
+    transform: rotate(180deg);
+    transform-origin: 50% 25%;
+}
 .sub-list .list-tb-baby:hover{
     color:#ff0036;
     text-decoration: underline;
