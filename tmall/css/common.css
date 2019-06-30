@@ -31,6 +31,5 @@ ul{
     position: absolute;
     right:8px;
     top:15px;
-    transform: rotate(0deg);
     transition:transform 0.2s linear;
 }
