@@ -50,6 +50,7 @@
 .sub-list-tb{
     width:72px;
     line-height: 20px;
+    /* z-index:5; */
 }
 .sub-list > li > a{
     color:#999;
@@ -80,6 +81,9 @@
 }
 /* header 结束 */
 /* 搜索 开始 */
+.logo-box{
+    overflow: hidden;
+}
 .logo{
     width: 240px;
     height: 130px;
@@ -147,6 +151,7 @@
 .nav{
     padding-left:200px;
     width:1030px;
+    overflow: hidden;
     /* background: #000; */
 }
 .nav li{
@@ -167,3 +172,25 @@
     padding:0 8px;
 }
 
+/* 轮播图开始 */
+.slide-box{
+    height: 500px;
+    background: #ccc;
+    border-top:1px solid #ff0036;
+}
+.slide-wrapper{
+    height: 500px;
+    background: yellow;
+    position: relative;
+}
+.menu-box{
+    width:200px;
+    background: #ff0036;
+    height: 500px;
+    position: absolute;
+    top:-35px;
+}
+.img-box img{
+    width: 1230px;
+    height: 500px;
+}
