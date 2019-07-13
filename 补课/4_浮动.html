@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div1{
+            background: #cccccc;
+            /* height: 200px; */
+            /* overflow:hidden;  */
+        }
+        #div2{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            /* 左浮  浮动的元素 脱离文档流  空间释放*/
+            float: right;
+        }
+        #div3{
+            width: 200px;
+            height: 200px;
+            background: #0000ff;
+            float: right;
+        }
+        h3{
+            height: 50px;
+            background: #000000;
+        }
+        .clearfix::after{
+            content:'';
+            /* 设置成块级元素 */
+            display: block;
+            clear: both;
+        }
+    </style>
+    <!-- 
+        浮动塌陷 
+        子元素浮动 空间释放 父元素没有高度 父元素塌陷
+        父元素设置高度
+        父元素设置overflow:hidden; 
+     -->
+</head>
+<body>
+    <div id="div1" class="clearfix">
+        <div id="div2"></div>
+        <div id="div3"></div>
+    </div>
+    <h3></h3>
+</body>
+</html>

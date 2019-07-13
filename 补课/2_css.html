@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* 标签选择器 元素选择器 */
+        /* div{
+            background: #f00;
+        }
+        h2{
+            background: #00f;
+        } */
+        /* id 选择器  唯一 */
+        /* #div2{
+            background: green;
+        }
+        .aa{
+            background: purple;
+        } */
+        /* 后代选择器 */
+        /* #ul1 li{
+            border:1px solid #000;
+        } */
+        /* 子代选择器 */
+        /* #ul1 > li{
+            border:1px solid #000;
+        } */
+        /* 伪类选择器 */
+        /* a:hover{
+            background: red;
+        } */
+
+        /* 伪元素选择器 */
+        /* #div2::before{
+            content:'哈哈哈哈';
+            background: red;
+        } */
+        #div2{
+            width: 800px;
+            height: 500px;
+            /* background-color: red;
+            background-image: url(../bbb.jpg);
+            background-repeat: no-repeat;
+            background-position: 20px 50px; */
+            background: red url(../bbb.jpg) no-repeat  20px 50px;
+
+
+        }
+        #div1{
+            background: green;
+            height: 50px;
+            /* text-align: center; */
+            /* 当行文本垂直对齐   行高= 高 */
+            /* line-height: 50px; */
+            /* text-indent: 50px; */
+
+            font-size: 30px;
+            font-weight: 900;
+            font-family:cursive;
+            font-style: italic;
+            /* font: */
+        }
+        /* text-decoration */
+        a{
+            text-decoration: line-through;
+        }
+        ul{
+            list-style: none;
+            
+            cursor: pointer;
+        }
+        input{
+            outline: none;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+
+<body style="height:2000px;">
+    <div id="div1">
+        hahahah 哈哈哈哈 呵呵呵 
+    </div>
+    <div id="div2">
+        呵呵呵
+    </div>
+
+    <h2>dtrfgh</h2>
+    <ul id="ul1">
+        <li>111</li>
+        <li class="aa">
+            111
+            <ul>
+                <li>aaa</li>
+                <li>bbb</li>
+            </ul>
+        </li>
+        <li>111</li>
+        <li class="aa">111</li>
+    </ul>
+    <ul>
+        <li>111</li>
+        <li class="aa">111</li>
+        <li>111</li>
+        <li class="aa">111</li>
+    </ul>
+    <a href="http://www.baidu.com">baidu</a>
+    <input type="text">
+
+
+</body>
+
+</html>
