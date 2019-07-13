@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="rem.js"></script>
+    <!-- 
+        320    42.666
+        375    50
+        rem.js 会根据屏幕宽度 等比设置html的font-size 
+        设置元素用rem单位的时候 在其他设备上会自适应
+        html的font-size 随着设备的宽度变化而变化  
+        html元素的款速会随着 html的font-size 的变化而变化
+
+        1rem  50
+        12rem  600
+
+        750像素的psd，还原成 /100  rem9
+     -->
+    <style>
+        *{
+            margin: 0;padding: 0;
+        }
+        #div1{
+            height: 1rem;
+            background: #ff0000;
+            /* width: 6rem; */
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+
+    
+</body>
+</html>
