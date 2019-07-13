@@ -13,13 +13,21 @@
         #div0{
             height: 300px;
             background: #ccc;
+            /* 父元素设置dispaly：flex */
             display: flex;
+            /* 父元素设置 子元素在父容器中的位置方向
+            row： 主轴与行内轴方向作为默认的书写模式。即横向从左到右排列（左对齐）。
+            row-reverse：对齐方式与row相反。
+            column：主轴与块轴方向作为默认的书写模式。即纵向从上往下排列（顶对齐）。
+            column-reverse：对齐方式与column相反。
+             */
             flex-direction: column-reverse;
         }
         #div1{
             height: 100px;
             background: #0000ff;
             /* width: 300px; */
+            /* flex :1(份数 子元素占剩余空间的份数) */
             flex: 1;
             /* float: left; */
             margin-right: 30px;
