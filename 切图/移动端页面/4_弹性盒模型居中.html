@@ -5,9 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        #div1{
+            width: 800px;
+            height: 500px;
+            background: #cccccc;
+            display: flex;
+            /* 水平对齐方式  justify-content
+                flex-start | flex-end | center | space-between | space-around
+            */
+            justify-content:center;
+            /* 垂直对齐方式  align-items
+            flex-start | flex-end | center | baseline | stretch
+            */
+            align-items: center;
+        }
+        #div2{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+        }
+        #div3{
+            width: 200px;
+            height: 200px;
+            background: #00f;
+          
+        }
+        #div4{
+            width: 200px;
+            height: 200px;
+            background: #0f0;
+          
+        }
+    </style>
 </head>
 <body>
     
-    
+    <div id="div1">
+        <div id="div2"></div>
+        <div id="div3"></div>
+        <div id="div4"></div>
+    </div>
 </body>
 </html>
