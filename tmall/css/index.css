@@ -243,15 +243,39 @@
     opacity:1;
 }
 .menu-sub-list{
-    width: 800px;
+    width: 850px;
     height: 500px;
     background: #fff;
     position: absolute;
     left:200px;
     top:0px;
+    display: none;
 }
 .main-list-box{
     position: relative;
+}
+.sub-list-left{
+    width: 640px;
+    height: 500px;
+    background: #ff0000;
+    float: left;
+    padding:19px 30px;
+    box-sizing: border-box;
+}
+.sub-list-right{
+    width:210px;
+    height: 500px;
+    background: #FAFAFA;
+    padding:10px;
+    float: right;
+    box-sizing: border-box;
+    
+}
+.sub-list-right img{
+    width: 70px;
+}
+.main-list:hover .menu-sub-list{
+    display: block;
 }
 
 
