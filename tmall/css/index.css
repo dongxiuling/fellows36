@@ -186,7 +186,8 @@
     position: absolute;
     top:-35px;
     left:0px;
-    background: #00ff00;
+    /* background: #00ff00; */
+    background: rgba(0,0,0,0.55);
     width: 200px;
     height: 535px;
 }
@@ -208,8 +209,49 @@
 .menu-title .icon-caidan{
     margin:0 8px 0 14px;
     font-size:18px;
- 
 }
 .slide-box{
     border-top:2px solid #ff0036;
 }
+.main-list{
+    height: 31.2px;
+    line-height: 31.2px;
+}
+.main-list > a{
+    color:#fff;
+    font-size: 14px;
+}
+.main-list .icon-gouwucheman{
+    font-size: 12px;
+}
+.list-icon{
+    margin:0 4px 0 14px;
+    opacity:0.5;
+}
+.main-list:hover{
+    background: #fff;
+}
+.main-list .list-line,.main-list .list-icon,.main-list > a
+{
+    color:#fff;
+}
+.main-list:hover .list-line,.main-list:hover .list-icon,.main-list:hover > a
+{
+    color:#e54077;
+}
+.main-list:hover .list-icon{
+    opacity:1;
+}
+.menu-sub-list{
+    width: 800px;
+    height: 500px;
+    background: #fff;
+    position: absolute;
+    left:200px;
+    top:0px;
+}
+.main-list-box{
+    position: relative;
+}
+
+
