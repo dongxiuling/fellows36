@@ -280,6 +280,7 @@
 /* 品牌开始 */
 .brand-box{
     margin-top:34px;
+    overflow: hidden;
 }
 .brand-list{
     width: 485px;
@@ -331,4 +332,50 @@ body{
 .brand-list-1 .brand-head-more{
     width: 18px;
     height: 55px;
+}
+/* 品牌墙开始 */
+.brand-logo-list{
+    width: 122px;
+    height: 108px;
+    float: left;
+    text-align: center;
+    position: relative;
+    /* line-height: 108px; */
+    /* overflow: hidden; */
+    background: #fff;
+    margin-right:1px ;
+    margin-bottom: 1px;
+
+}
+.brand-logo-list img{
+    width: 100px;
+    height: 50px;
+    margin-top:29px;
+}
+.logo-list-mask{
+    position: absolute;
+    left:0px;
+    top:0;
+    width: 122px;
+    height: 108px;
+    background: rgba(0,0,0,0.8);
+    /* display:none; */
+    opacity: 0;
+    transition: opacity 0.5s linear ;
+}
+.logo-mask-name{
+    color: #fff;
+    margin-top:35px;
+}
+.logo-mask-btn{
+    background: #ff0036;
+    color:#fff;
+    width: 63px;
+    height: 18px;
+    margin:10px auto 0px;
+    border-radius: 10px;
+}
+.brand-logo-list:hover .logo-list-mask{
+    /* display: block; */
+    opacity: 1;
 }
