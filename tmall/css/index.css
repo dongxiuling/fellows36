@@ -334,6 +334,9 @@ body{
     height: 55px;
 }
 /* 品牌墙开始 */
+.brand-logo{
+    overflow: hidden;
+}
 .brand-logo-list{
     width: 122px;
     height: 108px;
@@ -378,4 +381,65 @@ body{
 .brand-logo-list:hover .logo-list-mask{
     /* display: block; */
     opacity: 1;
+}
+.mart-box{
+    margin-top: 20px;
+}
+.mart-head-logo{
+    width: 214px;
+    height: 25px;
+    float: left;
+}
+.mart-head-list{
+    float: right;
+}
+.mart-head-list li{
+    float: left;
+    height: 20px;
+    line-height: 20px;
+    padding:5px 12px;
+}
+.mart-head-list a{
+    font-size: 14px; 
+    color: #000;
+    border-bottom:1px solid #f5f5f5;
+}
+.mart-head-list li:hover a{
+    border-bottom:1px solid #000;
+}
+.mart-body-img{
+    width: 235px;
+    height: 618px;
+}
+.banner-detail{
+    width: 218px;
+    height: 64px;
+    /* background: #ff0000; */
+    position: absolute;
+    left:0;
+    bottom: 120px;
+}
+.banner-box{
+    position: relative;
+}
+.banner-detail-left{
+    width: 70px;
+    height: 64px;
+    float: left;
+    background: rgba(0,0,0,0.9);
+    font-size: 18px;
+    color:#fff;
+    box-sizing: border-box;
+    padding: 6px 10px 0 16px;
+}
+.banner-detail-right{
+    width: 148px;
+    height: 64px;
+    float:right;
+    background: rgba(0,0,0,0.6);
+    color:#fff;
+    font-size: 18px;
+    padding:6px 0 0 14px;
+    box-sizing: border-box;
+
 }
