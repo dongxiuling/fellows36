@@ -421,6 +421,7 @@ body{
 }
 .banner-box{
     position: relative;
+    float: left;
 }
 .banner-detail-left{
     width: 70px;
@@ -442,4 +443,46 @@ body{
     padding:6px 0 0 14px;
     box-sizing: border-box;
 
+}
+/* 右侧列表 */
+.banner-list-box{
+    float: left;
+    width: 995px;
+}
+.banner-list{
+    width: 236px;
+    height: 302px;
+    float: left;
+    background: #fff;
+    margin-left:12.5px;
+    margin-bottom:15px;
+    padding:20px 25px;
+    box-sizing: border-box;
+    border:1px solid transparent;
+}
+.banner-list:hover{
+    border:1px solid #ff0036;
+}
+.banner-list:hover  .banner-list-img{
+    opacity: 0.5;
+}
+.banner-list-img{
+    width: 185px;
+    height: 185px;
+}
+.banner-list-1{
+    width: 484px;
+}
+.banner-list-des{
+    margin:8px 25px;
+    height: 40px;
+    line-height: 20px;
+    overflow: hidden;
+    color:#333;
+    font-size: 14px;
+}
+.banner-list-price{
+    text-align: center;
+    color:#ff0036;
+    font-size: 18px;
 }
