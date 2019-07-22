@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+
+        7.	斐波纳契（Fibonacci）数列的第一项是1，第二项是1，
+        以后各项都是前两项的和。试用递归函数和非递归函数各编写一个程序
+        ，求斐波纳契数列第N项的值。
+     -->
+    
+     <script>
+        //  1 1 2 3 5 8 13 21 34 55 ...
+        // 递归函数 函数自己调用自己  fn(n) = fn(n-1) + 
+        function fn(n){
+            // console.log(arguments);
+            if(n<=2){
+                return 1
+            }
+            return fn(n-1) + fn(n-2);
+        }
+       console.log( fn(10));
+
+        // function f1(){
+        //     // [1,2,3]
+        //     console.log(arguments.callee);
+        // }
+        // f1(1,2,3);
+     
+     
+     
+     </script>
+    
+</body>
+</html>
