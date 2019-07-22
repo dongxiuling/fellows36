@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        1.	编写程序．通过用户输入的年龄判断是哪个年龄段的人（儿童：年龄＜14；青少年：14<=年龄＜24；
+        青年：24<年龄＜40; 中年：40＜=年龄＜60; 老年：年龄>=60），并在页面上输出判断结果。
+        2.	编写程序，艰据用户输入的一个数字(0~6)．通过警示对话框显示对应的星期几
+        (0: 星期日; 1: 星期一;……6: 星期六;)。
+    -->
+    <script>
+        /*
+        var num = prompt("请输入年龄",18);
+        if(num <14 ){
+            console.log("儿童");
+        }else if(num >=14 && num <24){
+            console.log("青少年");
+        }
+        */
+
+        var num = prompt("请输入数字(0~6)"); //返回字符串 "1"
+        num*=1;
+        switch (num) {  //===
+            case 0:
+                alert('星期日');
+                break;
+            case 1:
+                alert('星期1');
+                break;
+            case 2:
+                alert('星期2');
+                break;
+            case 3:
+                alert('星期3');
+                break;
+            case 4:
+                alert('星期4');
+                break;
+            case 5:
+                alert('星期5');
+                break;
+            case 6:
+                alert('星期6');
+                break;
+            default:
+                 alert('输入错误');
+        }
+
+
+
+
+    </script>
+
+</body>
+
+</html>
