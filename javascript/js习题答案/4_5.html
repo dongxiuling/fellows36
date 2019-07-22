@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 双重for循环  第一层代表行  第二层 代表列
+        // m行 n列
+        // for(var i=0; i<5; i++){
+        //     for(var j=0; j<10; j++){
+        //         document.write(""+i+j +"&nbsp");
+        //     }
+        //     document.write("</br>")
+        // }   
+
+
+        for(var i=1; i<=5; i++){
+            for(var j=1; j<=i; j++){  //j(1-i)  会输出i次
+                document.write(j+"&nbsp;");
+            }
+            document.write("</br>");
+        }
+        
+        
+
+        
+        
+    </script>
+    
+</body>
+</html>
