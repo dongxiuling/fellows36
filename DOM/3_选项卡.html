@@ -73,10 +73,12 @@
         */
         var oUl = document.getElementById('btns');
         var aLi = oUl.getElementsByTagName('li');
-
+        var oContent = document.getElementById('content');
+        var aDiv = oContent.getElementsByTagName('div');
     
         for(var i=0; i<aLi.length; i++){ //i=3
-
+            // 自定义属性 添加索引
+            aLi[i].index = i;
             aLi[i].onclick = function(){
                 // console.log(i);
                 // 对当前对象的引用
@@ -84,11 +86,16 @@
                 // 把所有li的className 清空
                 for(var j=0; j<aLi.length ; j++){
                     aLi[j].className = "";
+                    aDiv[j].className = "";
                 }
                 // 点击的li添加className
                 this.className = "active";
+                // this
+                aDiv[this.index].className = "selected";
             }
         }
+
+
 
     
     </script>
