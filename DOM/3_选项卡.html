@@ -33,6 +33,10 @@
             margin-right:10px;
 
         }
+        #btns li.active{
+            background: #6D84B4;
+            color:#fff;
+        }
         #content{
             width: 300px;
             height: 100px;
@@ -44,14 +48,13 @@
         #content .selected{
             display: block;
         }
-    
     </style>
 </head>
 
 <body>
     <div id="container">
         <ul id="btns">
-            <li>事实</li>
+            <li class="active">事实</li>
             <li>体育</li>
             <li>娱乐</li>
         </ul>
@@ -61,6 +64,34 @@
             <div>娱乐</div>
         </div>
     </div>
+    
+    <script>
+        /*  undefined
+            1定义变量 没有赋值
+            2
+
+        */
+        var oUl = document.getElementById('btns');
+        var aLi = oUl.getElementsByTagName('li');
+
+    
+        for(var i=0; i<aLi.length; i++){ //i=3
+
+            aLi[i].onclick = function(){
+                // console.log(i);
+                // 对当前对象的引用
+                // this.style.background = "purple";
+                // 把所有li的className 清空
+                for(var j=0; j<aLi.length ; j++){
+                    aLi[j].className = "";
+                }
+                // 点击的li添加className
+                this.className = "active";
+            }
+        }
+
+    
+    </script>
 
 </body>
 
