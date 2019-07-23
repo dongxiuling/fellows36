@@ -10,18 +10,20 @@
     <button id="btn">click</button>
     <script>
 
-        // var timer = setInterval(function(){
-        //     console.log(Math.random());
-        // },1000)   
+        var timer = setInterval(function(){
+            console.log(Math.random());
+        },1000)   
         
         // var btn = document.getElementById('btn');
         // btn.onclick = function(){
         //     clearInterval(timer);
         // }
 
-        var timer = setTimeout(function(){
+        var timer1 = setTimeout(function(){
             console.log(Math.random());
-        },1000)   ;
+        },1000)   
+        
+        clearTimeout(timer1);
         
      
         
