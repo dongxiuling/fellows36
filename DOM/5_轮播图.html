@@ -95,6 +95,7 @@
         var oIngBox  = document.getElementById('img-box');
         var aImg = oIngBox.getElementsByTagName('a');
         var oNext = document.getElementById('next');
+        var oPrev = document.getElementById('prev');
         // 记录当前显示的索引
         var iNow = 0;
         
@@ -102,13 +103,7 @@
             aBtns[i].idx = i;
             aBtns[i].onclick = function(){
                 // 清楚所有btns的active
-                for(var j=0; j<aBtns.length; j++){
-                    aBtns[j].className = "";
-                    aImg[j].className = "";
-                }
-                // 自己添加active class
-                this.className = "active";
-                aImg[this.idx].className = "selected";
+                change(this.index);
             }
         }
         oNext.onclick = function(){
@@ -116,13 +111,23 @@
             if(iNow == aBtns.length){
                 iNow = 0;
             }
+            change(iNow)
+        }
+        oPrev.onclick = function(){
+            iNow--;
+            if(iNow == -1){
+                iNow = aBtns.length-1;
+            }
+            change(iNow);
+        }
+
+        function change(index){
             for(var i=0; i<aBtns.length ; i++){
                 aBtns[i].className = "";
                 aImg[i].className = "";
             }
-            aBtns[iNow].className = "active";
-            aImg[iNow].className = "selected";
-
+            aBtns[index].className = "active";
+            aImg[index].className = "selected";
         }
 
 
