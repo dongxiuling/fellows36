@@ -19,10 +19,15 @@
             margin:100px auto;
             position: relative;
             overflow: hidden;
+            height: 291px;
         }
         #img-box{
             width: 3750px;
             overflow: hidden;
+            position: absolute;
+            left:0px;
+            top:0px;
+            transition: left 1s linear ;
         }
         #img-box a{
             float: left;
@@ -95,8 +100,32 @@
     </div>
 
     <script>
-       
 
+       
+       
+        var oContainer = document.getElementById('container');
+        var oBtnBox = document.getElementById('btn-box');
+        var aBtns = oBtnBox.getElementsByTagName('li');
+        var oImgBox  = document.getElementById('img-box');
+        var aImg = oImgBox.getElementsByTagName('a');
+        var oNext = document.getElementById('next');
+        var oPrev = document.getElementById('prev');
+
+
+        for(var i=0; i<aBtns.length; i++){
+            aBtns[i].idx = i;
+            aBtns[i].onclick = function(){
+                
+                for(var j=0;j<aBtns.length; j++){
+                    aBtns[j].className = "";
+                }
+
+                this.className = "active";
+                // 0  1     2         n
+                // 0   -750  -2*750   -n*750
+                oImgBox.style.left = -this.idx*750 +"px";
+            }
+        }
 
         
 
