@@ -90,6 +90,7 @@
     </div>
 
     <script>
+        var oContainer = document.getElementById('container');
         var oBtnBox = document.getElementById('btn-box');
         var aBtns = oBtnBox.getElementsByTagName('li');
         var oIngBox  = document.getElementById('img-box');
@@ -98,12 +99,12 @@
         var oPrev = document.getElementById('prev');
         // 记录当前显示的索引
         var iNow = 0;
-        
         for(var i=0; i<aBtns.length; i++){
             aBtns[i].idx = i;
             aBtns[i].onclick = function(){
                 // 清楚所有btns的active
-                change(this.index);
+                change(this.idx);
+                iNow = this.idx;
             }
         }
         oNext.onclick = function(){
@@ -129,6 +130,16 @@
             aBtns[index].className = "active";
             aImg[index].className = "selected";
         }
+
+        var timer = setInterval(oNext.onclick,1000);
+
+        oContainer.onmouseout = function(){
+            timer = setInterval(oNext.onclick,1000);
+        }
+        oContainer.onmouseover = function(){
+            clearInterval(timer);
+        }
+        
 
 
         
