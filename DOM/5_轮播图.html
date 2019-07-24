@@ -83,8 +83,8 @@
             <li>5</li>
         </ul>
         <ul id="arrow-box">
-            <li>&lt;</li>
-            <li>&gt;</li>
+            <li id="prev">&lt;</li>
+            <li id="next">&gt;</li>
         </ul>
 
     </div>
@@ -94,6 +94,9 @@
         var aBtns = oBtnBox.getElementsByTagName('li');
         var oIngBox  = document.getElementById('img-box');
         var aImg = oIngBox.getElementsByTagName('a');
+        var oNext = document.getElementById('next');
+        // 记录当前显示的索引
+        var iNow = 0;
         
         for(var i=0; i<aBtns.length; i++){
             aBtns[i].idx = i;
@@ -108,7 +111,23 @@
                 aImg[this.idx].className = "selected";
             }
         }
-    
+        oNext.onclick = function(){
+            iNow++;
+            if(iNow == aBtns.length){
+                iNow = 0;
+            }
+            for(var i=0; i<aBtns.length ; i++){
+                aBtns[i].className = "";
+                aImg[i].className = "";
+            }
+            aBtns[iNow].className = "active";
+            aImg[iNow].className = "selected";
+
+        }
+
+
+        
+
     </script>
 
 </body>
