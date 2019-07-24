@@ -27,7 +27,7 @@
             position: absolute;
             left:0px;
             top:0px;
-            transition: left 1s linear ;
+            /* transition: left 1s linear ; */
         }
         #img-box a{
             float: left;
@@ -101,6 +101,7 @@
         </ul>
 
     </div>
+    <script src="jslib.js"></script>
     <script>
         var oContainer = document.getElementById('container');
         var oBtnBox = document.getElementById('btn-box');
@@ -110,21 +111,26 @@
         var oNext = document.getElementById('next');
         var oPrev = document.getElementById('prev');
         var iNow = 0;
-
-
         oNext.onclick = function(){
             iNow++;
-
+            if(iNow == aImg.length){
+                // 迅速切换到第一张图 
+                oImgBox.style.left = "0px";
+                // 显示索引是1的图片
+                iNow = 1;
+            }
             change(iNow);
         }
-
         function change(index){
             for(var i=0; i<aBtns.length; i++){
                 aBtns[i].className = "";
             }
+           aBtns[index==5?0:index].className = "active";
 
-            aBtns[index==5?0:index].className = "active";
-            oImgBox.style.left = - index *750+"px";
+            // oImgBox.style.left = - index *750+"px";
+            animate(oImgBox,{
+                left:- index *750
+            });
         }
 
 
