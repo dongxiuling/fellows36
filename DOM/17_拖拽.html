@@ -30,15 +30,17 @@
             e = e || window.event;
             // 鼠标距离div左侧的位置
             var xDis = e.clientX - oDiv.offsetLeft ;
-            var yDis = e.clientX - oDiv.offsetTop;
+            var yDis = e.clientY - oDiv.offsetTop;
             console.log(xDis);
-            oDiv.onmousemove = function(e){
+            document.onmousemove = function(e){
                 // div随着鼠标
                 oDiv.style.left = e.clientX - xDis +"px";
                 oDiv.style.top = e.clientY - yDis +"px";
 
-
             }
+        }
+        oDiv.onmouseup = function(){
+            document.onmousemove = null;
         }
     
     
