@@ -31,6 +31,12 @@
         }
         #big-box{
             display: none;
+            position: relative;
+        }
+        #big-img{
+            position: absolute;
+            left:0;
+            top:0;
         }
         
     </style>
@@ -43,7 +49,7 @@
             <span id="drag"></span>
         </div>
         <div id="big-box">
-            <img src="images/2.jpg" alt="">
+            <img id="big-img" src="images/2.jpg" alt="">
         </div>
     </div>
 
@@ -51,18 +57,53 @@
         var oSmallBox = document.getElementById('small-box');
         var oDrag = document.getElementById('drag');
         var oBigBox = document.getElementById('big-box');
+        var oBigImg = document.getElementById('big-img');
+
+
 
         oSmallBox.onmouseover = function(){
             oDrag.style.display = "block";
             oBigBox.style.display = "block";
         }
         oSmallBox.onmousemove = function(e){
+
             // drag元素 移动（不断定位）
             oDrag.style.left = e.clientX - oDrag.offsetWidth/2 +"px";
             oDrag.style.top = e.clientY - oDrag.offsetHeight/2 +"px";
+            
+            if(oDrag.offsetLeft < 0){
+                oDrag.style.left = "0px";
+            }
+            var maxLeft = oSmallBox.offsetWidth-oDrag.offsetWidth;
+            if(oDrag.offsetLeft >= maxLeft){
+                oDrag.style.left = maxLeft+"px";
+            }
+            if(oDrag.offsetTop < 0){
+                oDrag.style.top = "0px";
+            }
+            var maxLeft = oSmallBox.offsetHeight-oDrag.offsetHeight;
+            if(oDrag.offsetTop >= maxLeft){
+                oDrag.style.top = maxLeft+"px";
+            }
+            // 小图能走得最大距离 
+            var smallDis = oSmallBox.offsetWidth - oDrag.offsetWidth;
+            var bigDis = oBigImg.offsetWidth - oBigBox.offsetWidth;
+            var smallDisY = oSmallBox.offsetHeight - oDrag.offsetHeight;
+            var bigDisY = oBigImg.offsetHeight - oBigBox.offsetHeight;
+            // 
+            var xPro = oDrag.offsetLeft/smallDis;
+            oBigImg.style.left = -bigDis*xPro+"px";
 
-
+            // 小图垂直方向的比例 * 大图的最大距离
+            oBigImg.style.top = -oDrag.offsetTop/smallDisY *bigDisY +"px";
         }
+
+        oSmallBox.onmouseout = function(){
+            oDrag.style.display = "none";
+            oBigBox.style.display = "none";
+        }
+
+
     
     
     </script>
