@@ -27,8 +27,12 @@
             left:0;
             top:0;
             background: rgba(255,255,255,0.5);
+            display: none;
         }
-    
+        #big-box{
+            display: none;
+        }
+        
     </style>
 </head>
 
@@ -43,6 +47,25 @@
         </div>
     </div>
 
+    <script>
+        var oSmallBox = document.getElementById('small-box');
+        var oDrag = document.getElementById('drag');
+        var oBigBox = document.getElementById('big-box');
+
+        oSmallBox.onmouseover = function(){
+            oDrag.style.display = "block";
+            oBigBox.style.display = "block";
+        }
+        oSmallBox.onmousemove = function(e){
+            // drag元素 移动（不断定位）
+            oDrag.style.left = e.clientX - oDrag.offsetWidth/2 +"px";
+            oDrag.style.top = e.clientY - oDrag.offsetHeight/2 +"px";
+
+
+        }
+    
+    
+    </script>
 
 </body>
 
