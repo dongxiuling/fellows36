@@ -36,7 +36,24 @@
                 // div随着鼠标
                 oDiv.style.left = e.clientX - xDis +"px";
                 oDiv.style.top = e.clientY - yDis +"px";
-
+                // 左边界
+                if(oDiv.offsetLeft <0 ){
+                    oDiv.style.left = 0;
+                }
+                // 上边界
+                if(oDiv.offsetTop <0 ){
+                    oDiv.style.top = 0;
+                }
+                // 右侧最大值 
+                var xMax = document.documentElement.clientWidth - oDiv.offsetWidth;
+                if(oDiv.offsetLeft  > xMax){
+                    oDiv.style.left = xMax +"px";
+                }
+                // 下最大值 
+                var yMax = document.documentElement.clientHeight - oDiv.offsetHeight;
+                if(oDiv.offsetTop  > yMax){
+                    oDiv.style.top = yMax +"px";
+                }
             }
         }
         oDiv.onmouseup = function(){
