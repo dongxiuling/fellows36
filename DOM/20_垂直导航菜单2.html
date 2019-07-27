@@ -55,16 +55,17 @@
 
     <script>
         var aH2 = document.getElementsByTagName('h2');
-        var flag = true; //true代表隐藏  false显示
+        // var flag = true; //true代表隐藏  false显示 
         for (var i = 0; i < aH2.length; i++) {
+            aH2[i].flag = true;//两种切换  可以通过布尔值 作为标识
             aH2[i].onclick = function () {
                 var oUl = next(this);
-                if(flag){ //隐藏
+                if(this.flag){ //隐藏
                     oUl.style.display = "block";
                 }else{ //显示 
                     oUl.style.display = "none";
                 }
-                flag = !flag;
+                this.flag = !this.flag;
             }
         }
 
