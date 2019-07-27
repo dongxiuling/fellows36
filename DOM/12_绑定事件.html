@@ -9,15 +9,15 @@
 <body>
     <!-- <div id='div1' onclick="alert('hahah')">111111</div> -->
 
-    <div id='div1'>111111</div>
+    <div id='div1' >111111</div>
     <script>
          var oDiv1 = document.getElementById('div1');
-        //  oDiv1.onclick = function(){
-        //      console.log(111);
-        //  }
-        //  oDiv1.onclick = function(){
-        //      console.log(222);
-        //  }
+         oDiv1.onclick = function(){
+             console.log(111);
+         }
+         oDiv1.onclick = function(){
+             console.log(222);
+         }
 
         oDiv1.addEventListener('click',function(){
             console.log(111);
