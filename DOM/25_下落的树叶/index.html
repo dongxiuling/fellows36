@@ -15,7 +15,6 @@
     <!-- 
         // 叶子 
             属性：  大小(100-150px)  位置  图片  速度
-            
             方法：  初始化  下落 
     -->
     <script>
@@ -41,20 +40,31 @@
             document.body.appendChild(this.img);
         }
         Leaf.prototype.fall = function(){
-            var that = this;
-            var timer = setInterval(function(){ //定时器中this指向Window
-                if(that.img.offsetTop >= screenHeight-that.img.offsetHeight){ //判断是都到达底部
-                    clearInterval(timer);
-                }else{
-                    that.img.style.top = that.img.offsetTop + that.speed +"px";
-                }
-            },10);
+            var that = this;  //因为 定时器中this指向window 所以先将this存在that中，用来在定时器中使用
+            setTimeout(function(){ //延迟不同时间下落
+                this.timer = setInterval(function(){ //定时器中this指向Window
+                    if(that.img.offsetTop >= screenHeight-that.img.offsetHeight){ //判断是都到达底部
+                        clearInterval(that.timer);
+                    }else{
+                        that.img.style.top = that.img.offsetTop + that.speed +"px";
+                    }
+                },10);
+            },Math.random()*500);
         }
-        var leaf = new Leaf();
-        leaf.init();
+
+        var arr = [];
+        for(var i=0; i<5; i++){
+            var leaf = new Leaf();
+            arr.push(leaf);
+            leaf.init();
+        }
+
         document.onclick = function(){
-            leaf.fall();
+            for(var j=0; j<arr.length; j++){
+                arr[j].fall();
+            }
         }
+       
        
   
         
