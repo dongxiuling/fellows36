@@ -10,9 +10,13 @@
             margin: 0;
             padding: 0;
         }
+        html,body{
+            height:100%;
+        }
         #container{
             background: url(img/bg.jpg) 0 0 repeat ;
             position: relative;
+            height:100%;
         }
         .box{
             width: 125px;
@@ -55,19 +59,35 @@
         }
         // 等待所有图片加载完成，再继续（保证能够获取图片属性）
         function loadSuccess(){ 
-            //1. 生成24个 div 插入到页面左上角
+            //1. 生成24个div 插入到页面左上角
             for(var i=0; i<4; i++){ //行 数
                 for(var j=0; j<6; j++){ //列数
                     var oDiv = document.createElement('div');
-                    oDiv.style.background = "url(img/thumbs/"+(i+1)+".jpg)";
+                    oDiv.style.background = "url(img/thumbs/"+(i*6+j+1)+".jpg)";
                     oDiv.className = "box";
+                    oDiv.row = i;
+                    oDiv.col = j;
                     oContainer.appendChild(oDiv);
                 }
             }
 
             //2.改变.box的位置 
-            
-
+            var aBox = document.getElementsByClassName('box');
+            var oBoxWidth = aBox[0].offsetWidth;
+            var oBoxHeight =  aBox[0].offsetHeight;
+            // 水平间距
+            var disX = (container.offsetWidth - 6*oBoxWidth)/7;
+            // 垂直间距
+            var disY = (container.offsetHeight - 4*oBoxHeight)/5;
+            for(var i=0; i<aBox.length; i++){
+                //  col    0
+                //        (n+1)
+                aBox[i].style.left =  (aBox[i].col+1)*disX + aBox[i].col*oBoxHeight+ "px";
+                //  行  1        2               3                   n(从0开始)
+                //   1*disY   2*disY + 1*img  3*disY + 2*img      (n+1)*disY +(n)img
+                var n = aBox[i].row;
+                aBox[i].style.top = (n+1)*disY + n*oBoxWidth+ "px";
+            }
 
 
         }
