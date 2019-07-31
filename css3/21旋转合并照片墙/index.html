@@ -81,7 +81,7 @@
             // box之间垂直间距
             var disY = (container.offsetHeight - 4*oBoxHeight)/5;
             for(var i=0; i<aBox.length; i++){
-                // 0  100 200 300
+                //延迟时间第一个延迟时间最长  最后一个延迟时间最短
                 aBox[i].style.transitionDelay = (aBox.length-i)*100+"ms";
                 aBox[i].style.transform = "rotate("+(Math.random()*40-20)+"deg)";
                 aBox[i].style.left =  (aBox[i].col+1)*disX + aBox[i].col*oBoxWidth+ "px";
