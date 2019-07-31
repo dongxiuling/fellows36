@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+
+
+    </div>
+
+    <script>
+        var count = 0;
+        // 加载小图
+        for(var i=0; i<24; i++){
+            var oImg = new Image();
+            oImg.onload = function(){
+                count++;
+                if(count == 48){
+                    loadSuccess()
+                }
+            }
+            oImg.src="img/thumbs/"+(i+1)+".jpg";
+        }
+        // 加载大图
+        for(var i=0; i<24; i++){
+            var oImg = new Image();
+            oImg.onload = function(){
+                count++;
+                if(count == 48){
+                    loadSuccess();
+                }
+            }
+            oImg.src="img/"+(i+1)+".jpg";
+        }
+
+        // 等待所有图片加载完成，再继续（保证能够获取图片属性）
+        function loadSuccess(){ 
+            
+
+        }
+
+
+
+
+    
+    </script>
+</body>
+</html>
