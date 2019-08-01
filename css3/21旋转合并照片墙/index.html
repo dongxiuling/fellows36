@@ -68,6 +68,7 @@
                     oDiv.className = "box";
                     oDiv.row = i; //自定义行数
                     oDiv.col = j; //自定义列数
+                    oDiv.onclick = fn;
                     oContainer.appendChild(oDiv);
                 }
             }
@@ -90,8 +91,23 @@
                 var n = aBox[i].row;//获取行数 
                 aBox[i].style.top = (n+1)*disY + n*oBoxHeight+ "px";
             }
-        }
+            // 显示大图时  box左边间距
+            var bigDisX = (oContainer.offsetWidth - 6*127)/2;
+            var bigDisY = (oContainer.offsetHeight - 4*127)/2;
+            function fn(){
+                for(var i=0; i<aBox.length; i++){
+                    // 延迟时间设置为0
+                    aBox[i].style.transitionDelay = "0ms";
+                    // n*aBox.width + bigDisX;
+                    aBox[i].style.left = aBox[i].col * 127 + bigDisX +"px";
+                    aBox[i].style.top = aBox[i].row * 127 + bigDisY +"px";
+                    aBox[i].style.transform = "rotate(0deg)";
+                    aBox[i].style.borderWidth = "1px";
+                }
 
+            }
+       
+        }
 
 
 
