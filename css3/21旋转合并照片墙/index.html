@@ -28,6 +28,15 @@
             transition: all 2s ease ;
 
         }
+        .box span{
+            position: absolute;
+            left:0;
+            top:0;
+            right:0;
+            bottom: 0;
+            background:url(img/1.jpg) 0 0 no-repeat;
+            opacity: 0;
+        }
     </style>
 </head>
 <body>
@@ -61,13 +70,17 @@
         // 等待所有图片加载完成，再继续（保证能够获取图片属性）
         function loadSuccess(){ 
             //1. 生成24个div 插入到页面左上角
+            var idx = 0;
             for(var i=0; i<4; i++){ //行 数
                 for(var j=0; j<6; j++){ //列数
                     var oDiv = document.createElement('div');
-                    oDiv.style.background = "url(img/thumbs/"+(i*6+j+1)+".jpg)";
+                    oDiv.style.background = "url(img/thumbs/"+(idx+1)+".jpg)";
                     oDiv.className = "box";
                     oDiv.row = i; //自定义行数
                     oDiv.col = j; //自定义列数
+                    oDiv.index = idx;
+                    idx++;
+                    oDiv.innerHTML = "<span></span>"
                     oDiv.onclick = fn;
                     oContainer.appendChild(oDiv);
                 }
@@ -103,10 +116,16 @@
                     aBox[i].style.top = aBox[i].row * 127 + bigDisY +"px";
                     aBox[i].style.transform = "rotate(0deg)";
                     aBox[i].style.borderWidth = "1px";
-                }
 
+                    var oSpan = aBox[i].getElementsByTagName('span')[0];
+                    oSpan.style.opacity = 1;
+                    // this.index+1的那张图   top  = -row * oBox.height
+                    var x = - aBox[i].col * 125 ;
+                    var y = -aBox[i].row *125;
+                    // 0px 0px no-repeat
+                    oSpan.style.background = "url(img/"+(this.index+1)+".jpg) "+x+"px "+y+"px no-repeat";
+                }
             }
-       
         }
 
 
