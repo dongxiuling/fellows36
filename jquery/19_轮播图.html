@@ -104,7 +104,18 @@
             $('#btn-box li').eq(index).addClass('active').siblings().removeClass('active');
             $('#img-box a').eq(index).addClass('selected').siblings().removeClass('selected');
         }
+        var timer = setInterval(function(){
+            // 执行next按钮的点击事件
+            $('#next').trigger('click');
+        },1000);
 
+        $('#container').hover(function(){//鼠标划入处理函数
+            clearInterval(timer);
+        },function(){ ////鼠标划出处理函数
+            timer = setInterval(function(){
+                $('#next').trigger('click');
+            },1000);
+        });
 
     
     </script>
