@@ -9,6 +9,7 @@
         *{
             margin: 0;
             padding: 0;
+            touch-action: none;
         }
         body{
             background: #000;
@@ -19,7 +20,7 @@
         }
         #container img{
             width:25%;
-            box-sizing: border-box;
+            box-sizing: border-box; /*怪异   content-box 标准盒模型*/
             border-right:1px solid #000;
             border-bottom:1px solid #000;
         }
@@ -31,9 +32,8 @@
             top:0;
             width:100%;
             height: 100%;
-            /* display: none; */
+            display: none;
         }
-    
     </style>
 </head>
 <body>
@@ -45,6 +45,37 @@
         for(var i=0; i<24; i++){
             $('<img src="img/thumbs/'+(i+1)+'.jpg"/>').appendTo('#container');
         }
+        var nowIndex = 0;
+
+        $('#container img').on('click',function(){
+            //1 显示大图
+            $('#big').show();
+            //2显示 索引对应的大图
+            $('#big').css("background-image","url(img/"+ ($(this).index()+1) +".jpg)")
+            nowIndex = $(this).index();
+        })
+        $('#big').on('click',function(){
+            $(this).hide();
+        }).on('swipeLeft',function(){
+            nowIndex++;
+            if(nowIndex == $('#container img').size()){
+                nowIndex = 0;
+            }
+            $('#big').css("background-image","url(img/"+ (nowIndex+1) +".jpg)")
+        }).on('swipeRight',function(){
+            nowIndex--;
+            if(nowIndex == -1){
+                nowIndex = $('#container img').length-1;
+            }
+            $('#big').css("background-image","url(img/"+ (nowIndex+1) +".jpg)")
+        })
+
+
+
+
+
+
+
 
     
     
