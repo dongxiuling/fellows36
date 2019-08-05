@@ -9,6 +9,7 @@
         *{
             margin: 0;
             padding: 0;
+            touch-action: none;
         }
         #div1{
             width: 100%;
@@ -37,15 +38,15 @@
         $('#div1').on('doubleTap',function(){
             console.log('doubleTap');
         });
-
         $('#div1').on('swipeLeft',function(){
             console.log('left')
         })
-
         $('#div1').on('swipe',function(){
             console.log('swipe')
         })
-
+        $('#div1').on('swipeRight',function(){
+            console.log('right')
+        })
 
 
 
