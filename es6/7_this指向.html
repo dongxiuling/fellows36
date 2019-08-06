@@ -16,7 +16,7 @@
             val: 2,
             dbl: function () {
                 this.val *= 2;
-                val *= 2;
+                val *= 2; // obj.dbl() 取到的是val变量   即 window.val = 1;
                 console.log(val);
                 console.log(this.val);
             }
