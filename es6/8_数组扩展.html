@@ -23,7 +23,7 @@
 
         var arr3 = [1, 2, 3, 4, 5];
         // 找到第一个符合条件的成员
-        var x = arr3.find(function (val, key, arr) {
+        var x = arr3.find(function (val, index, arr) {
             // console.log(val,key,arr);
             return val > 1;
         })
@@ -48,11 +48,42 @@
             return obj.age == 18;
         })
         console.log(obj1);
-        // 过滤出所有符合条件的成员
+        // 过滤出所有符合条件的成员 []
         var arr5 = arr4.filter(function(obj){
             return obj.age == 18;
         })
         console.log(arr5);
+
+        var arr6 = [1,2,3,4,5];  //=>[2,4,6,8,10]
+        // 映射出新数组 返回新数组
+        var arr7 = arr6.map(function(val,index){
+            return val*2;
+        });
+
+        console.log(arr7);
+        // 循环 
+        arr6.forEach(function(val,index){
+            console.log(val,index);
+        })
+
+       console.log( arr6.includes(1))
+
+        // for(var i=0; i<aLi.length; i++){
+        //     aLi[i]
+        // }
+        var arr8 = ['a','b','c','d','e'];
+        for(val of arr8){  //循环数组中的元素
+            console.log(val);
+        }
+        for(index of arr8.keys()){ //循环索引
+            console.log(index);
+        }
+        for([index,val] of arr8.entries()){ //循环索引 数组中的元素
+            // console.log(arr); //[0,'a'] 
+            // var a = arr[0]
+            // var b = arr[1]
+            console.log(index,val);
+        }
 
         
 
