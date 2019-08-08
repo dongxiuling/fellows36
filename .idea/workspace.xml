@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4d15bddd-8f38-4d7b-af2a-4baf51ee8a42" name="Default" comment="" />
+    <list default="true" id="4d15bddd-8f38-4d7b-af2a-4baf51ee8a42" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/es6/26_ajax.html" beforeDir="false" afterPath="$PROJECT_DIR$/es6/26_ajax.html" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -31,7 +33,7 @@
       <file leaf-file-name="26_ajax.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/es6/26_ajax.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-596" />
+            <state relative-caret-position="-20" />
           </provider>
         </entry>
       </file>
@@ -53,7 +55,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="726" />
@@ -119,16 +121,15 @@
       <option name="presentableId" value="Default" />
       <updated>1563784470203</updated>
       <workItem from="1563784473265" duration="559000" />
-      <workItem from="1565165028402" duration="16000" />
+      <workItem from="1565165028402" duration="616000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="575000" />
+    <option name="totallyTimeSpent" value="1175000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="726" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1280" height="726" extended-state="6" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -175,7 +176,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/es6/26_ajax.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-596" />
+        <state relative-caret-position="-20" />
       </provider>
     </entry>
   </component>

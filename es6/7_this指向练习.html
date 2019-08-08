@@ -7,21 +7,23 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-
+<div id="div1">click</div>
 <body>
     <script>
 
         window.val = 1;
         var obj = {
             val: 2,
-            dbl: function () {
+            dbl:  () => {
                 this.val *= 2;
                 val *= 2; // obj.dbl() 取到的是val变量   即 window.val = 1;
                 console.log(val);
                 console.log(this.val);
+                console.log(this);
             }
         };
         obj.dbl();  //  obj.val = 4;  val = 2;   2 4
+
         var func = obj.dbl;
         // 理解为：
         // var func = function () {
@@ -31,6 +33,17 @@
         //     console.log(this.val); //8
         // }
         func(); //
+        var oDiv = document.getElementById('div1');
+        oDiv.onclick = obj.dbl;
+        // 相当于：
+
+        // oDiv.onclick =  () => {
+        //     this.val *= 2;  //window.val = 4;
+        //     val *= 2;    // 8
+        //     console.log(val);   //8
+        //     console.log(this.val); //8
+        // }
+
 
     </script>
 </body>
