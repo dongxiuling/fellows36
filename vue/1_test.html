@@ -8,7 +8,7 @@
 </head>
 <body>
     <div id="app">
-        {{msg}}
+        {{msg}} 
         {{num}}
     </div>
     <div id="app2">
@@ -18,8 +18,8 @@
     <script src="vue.js"></script>
     <script>
         let vm = new Vue({
-            el:"#app",
-            data:{
+            el:"#app", //挂载元素
+            data:{ //数据
                 msg:'haha',
                 num:10
             }
