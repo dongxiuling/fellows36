@@ -65,10 +65,10 @@
                     // 找到包含value显示 其他隐藏
                     let value = this.name;
                     this.list.forEach(function(obj,index){
-                        if(obj.name.includes(value)){ //包含 -> 显示
-                            obj.isShow = true;
+                        if(obj.name.includes(value)){ //包含
+                            obj.isShow = true; // 显示
                         }else{//不包含
-                            obj.isShow = false;
+                            obj.isShow = false; //隐藏
                         }
                     })
                 }
