@@ -20,8 +20,9 @@
         <!-- 绑定属性   -->
         <!-- :class={class名:boolean} -->
         <!-- :class = [classA,classB] -->
-        <div v-bind:class="{a:isA,b:isB}">dfghjklk;'</div>
-        <div v-bind:class="[classA,classB]">e67890uyrgfhgjhkjlkkjhfg;'</div>
+        <div :class="{a:isA,b:isB}">dfghjklk;'</div>
+        <!-- v-bind:id    :id -->
+        <div :class="[classA,classB]"  :id="myId">e67890uyrgfhgjhkjlkkjhfg;'</div>
     </div>
 
     <script src="vue.js"></script>
@@ -32,7 +33,8 @@
                 isA:true,
                 isB:true,
                 classA:'a',
-                classB:'b'
+                classB:'b',
+                myId:'xx'
             }
         })
     
