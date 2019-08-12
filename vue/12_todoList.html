@@ -126,7 +126,7 @@
                     this.proList = [...arr];
                 },
                 search(){
-                    // this.searchValue
+                    // forEach回调函数中 this指向window 需使用箭头函数将this指向父作用域
                     this.proList.forEach((obj) => {
                         if(obj.proName.includes(this.searchValue)){
                             obj.isShow = true;
