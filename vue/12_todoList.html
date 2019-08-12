@@ -53,17 +53,17 @@
             <button>搜索</button>
         </div>
         <ul>
-            <li v-for="product in proList" @click="change(product)" :class="{pink:product.isChecked}">
+            <li v-for="(product,index) in proList" @click="change(product)" :class="{pink:product.isChecked}">
                 <input type="checkbox" v-model="product.isChecked">
                 <span>{{product.proName}}</span>
                 <div class="right">
                     <span class="price">{{product.price}}</span>
-                    <span class="close">[X]</span>
+                    <span class="close" @click.stop="del(index)">[X]</span>
                 </div>
             </li>
         </ul>
         <div>
-            <button>删除选中</button>
+            <button @click="delAll()">删除选中</button>
             <span>总价 {{total()}}</span>
         </div>
 
@@ -111,6 +111,17 @@
                         }
                     })
                     return sum;
+                },
+                del(index){
+                    console.log(index);
+                    this.proList.splice(index,1);
+                },
+                delAll(){
+                    // 返回 所有没被勾选的
+                    let arr = this.proList.filter(function(obj){
+                        return !obj.isChecked;
+                    })
+                    this.proList = [...arr];
                 }
             }
         })
