@@ -24,7 +24,9 @@
         <ul>
             <li v-for="obj in orderList">{{obj.name}}({{obj.price}})</li>
         </ul>
-        <p>总金额：{{total()}}</p>
+        <p>总金额：{{total}}</p>
+        <p>总金额：{{total}}</p>
+        <p>总金额：{{total}}</p>
 
     </div>
     <script src="vue.js"></script>
@@ -52,17 +54,28 @@
                 isShow:false
             },
             methods:{
-                total(){
-                    let sum = 0;
-                    this.orderList.forEach(function(obj,index){
-                        sum += obj.price;
-                    });
-                    return sum;
-                },
+               
                 fn(){
                     // orderList数组中 除了第一个 都删除
                     this.orderList.splice(1);
+                }
+            },
+            computed:{
+                // total(){
+                //     let sum = 0;
+                //     this.orderList.forEach(function(obj,index){
+                //         sum += obj.price;
+                //     });
+                //     return sum;
+                // }
 
+                total:{
+                    get:function(){
+
+                    },
+                    set:function(){
+                        
+                    }
                 }
             }
         })
