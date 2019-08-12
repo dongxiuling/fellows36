@@ -23,6 +23,8 @@
         <div :class="{a:isA,b:isB}">dfghjklk;'</div>
         <!-- v-bind:id    :id -->
         <div :class="[classA,classB]"  :id="myId">e67890uyrgfhgjhkjlkkjhfg;'</div>
+        
+        <input :type="myType" :id="myId">
     </div>
 
     <script src="vue.js"></script>
@@ -34,7 +36,9 @@
                 isB:true,
                 classA:'a',
                 classB:'b',
-                myId:'xx'
+                myId:'xx',
+                myType:'text',
+                myId:'div1'
             }
         })
     

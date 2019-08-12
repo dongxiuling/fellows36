@@ -52,7 +52,7 @@
             <button class="search" @click="search()">搜索</button>
         </div>
         <ul>
-            <li v-for="(product,index) in proList" @click= "change(product,index)" :class="{selected:product.isSelect}">
+            <li v-for="(product,index) in proList" @click= "change(product,index)" :class="{selected:product.isSelect}" v-show="product.isShow">
                 <input type="checkbox" v-model="checke" :value="index">
                 <span>{{product.name}}</span>
                 <span class="close">[X]</span>
@@ -74,22 +74,27 @@
                     {
                         name:'裤子',
                         price:11,
-                        isSelect:false
+                        isSelect:false,
+                        isShow:true
                     },
                     {
                         name:'衣服',
                         price:22,
-                        isSelect:false
+                        isSelect:false,
+                        isShow:true
+
                     },
                     {
                         name:'电脑',
                         price:3333,
-                        isSelect:false
+                        isSelect:false,
+                        isShow:true
                     },
                     {
                         name:'iphoneX',
                         price:6666,
-                        isSelect:false
+                        isSelect:false,
+                        isShow:true
                     }
                 ],
                 name:'',
@@ -113,7 +118,8 @@
                     this.proList.push({
                         name:this.name,
                         price:this.price,
-                        isSelect:false
+                        isSelect:false,
+                        isShow:true
                     });
                     //添加后清空输入框的文字
                     this.name = '';
@@ -139,12 +145,13 @@
                     this.checke = [];
                 },
                 search(){
-                    // this.searchVal
-                    let newPro = this.proList.filter((product) => {
-                    
-                        return product.name.includes(this.searchVal);
-                    });
-                    this.proList = newPro;
+                    this.proList.forEach((ele)=>{
+                        if(ele.name.includes(this.searchVal)){
+                            ele.isShow = true;
+                        }else{
+                            ele.isShow = false;
+                        }
+                    })
                 }
             }
         });

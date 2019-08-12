@@ -24,6 +24,9 @@
             <option value="师大">师大</option>
         </select>
         <h2>{{msg}}</h2>
+
+        是否同意<input type="checkbox" v-model="flag">
+        <h2 v-if="flag">已同意。。。。</h2>
     </div>
 
     <script src="vue.js"></script>
@@ -34,7 +37,8 @@
                 msg:'haha',
                 hobby:["篮球","唱歌"],
                 sex:"1",
-                school:"黑大"
+                school:"",
+                flag:false
             }
         })
     
