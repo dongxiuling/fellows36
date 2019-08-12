@@ -12,7 +12,7 @@
     <div id="app">
         <div>
             是否需要额外付费设施
-            <input type="checkbox" v-model="isShow">
+            <input type="checkbox" v-model="isShow" @click="fn()">
         </div>
         <ul v-show="isShow">
             <li v-for="obj in list">
@@ -22,9 +22,9 @@
         </ul>
         <p>订单费用信息</p>
         <ul>
-            <li v-for=" obj in orderList">{{obj.name}}({{obj.price}})</li>
+            <li v-for="obj in orderList">{{obj.name}}({{obj.price}})</li>
         </ul>
-        <p>总金额：400</p>
+        <p>总金额：{{total()}}</p>
 
     </div>
     <script src="vue.js"></script>
@@ -49,8 +49,21 @@
                 orderList:[
                     {name:"群力花园豪华型",price:400}
                 ],
-                isShow:false,
-                facility:[]
+                isShow:false
+            },
+            methods:{
+                total(){
+                    let sum = 0;
+                    this.orderList.forEach(function(obj,index){
+                        sum += obj.price;
+                    });
+                    return sum;
+                },
+                fn(){
+                    // orderList数组中 除了第一个 都删除
+                    this.orderList.splice(1);
+
+                }
             }
         })
 
