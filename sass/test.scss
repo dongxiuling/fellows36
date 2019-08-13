@@ -15,7 +15,15 @@ body{
         }
         p{
             height:300px;
+            padding:{
+                top:20px;
+                bottom:20px;
+            }
+            &:hover{
+                color:blue;
+            }
         }
+
     }
 }
 
