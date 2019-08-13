@@ -45,10 +45,14 @@
             mounted(){
                 console.log("mounted",this.$el,this.$data);
             },
-            beforeUpdate(){
+            beforeUpdate(){//
+                var app = document.getElementById('app');
+                console.log(app.innerHTML);
                 console.log("beforeUpdate",this.$el,this.$data);
             },
             updated(){
+                var app = document.getElementById('app');
+                console.log(app.innerHTML);
                 console.log("updated",this.$el,this.$data);
             },
             beforeDestroy(){
