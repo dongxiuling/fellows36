@@ -6,16 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style> 
+        .aa{
+            background: orangered;
+        }
+    </style>
 </head>
+
 <body>
     <div id="app">
-        <my-component></my-component>
-        <my-component></my-component>
+        <my-component title="111"></my-component>
+        <my-component title="222"></my-component>
+        <h5>sdfghjlk;l'</h5>
     </div>
-    <div id="app1">
-        <my-component></my-component>
-    </div>
+    <template id="temp">
+        <div>
+            <h2 class="aa">{{title}}</h2>
+            <p>{{count}}</p>
+            <button @click="add()">click</button>
+        </div>
+    </template>
     <script src="vue.js"></script>
+    <!-- 父組件向子組件傳值  props:['title'] -->
     <script>
         // 局部組件
         new Vue({
@@ -24,8 +36,20 @@
             },
             components: {
                 "myComponent": {
-                    template: "<div>hehhehe</div>"
-                }
+                    template: "#temp",
+                    props:['title'],
+                    data(){
+                        return {
+                            count:0
+                        }
+                    },
+                    methods:{
+                        add(){
+                            this.count++;
+                        }
+                    }
+                },
+                
             }
         })
 
