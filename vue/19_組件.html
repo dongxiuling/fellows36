@@ -6,24 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <style> 
-        .aa{
+    <style>
+        .aa {
             background: orangered;
         }
     </style>
 </head>
 
 <body>
-    <div id="app">
-        <my-component title="111"></my-component>
-        <my-component title="222"></my-component>
-        <h5>sdfghjlk;l'</h5>
+    <div id="app"> 
+        <!-- 父组件 -->
+        <my-component title="111">
+            <div slot="h">
+                <h3 >111的内容1</h3>
+                <h3>111的内容1</h3>
+            </div>
+           
+            <p slot="p">111的内容2</p>
+        </my-component>
+        <my-component title="222">
+            <h3>222的内容1</h3>
+            <p>222的内容2</p>
+        </my-component>
+        <h5>88888888888</h5>
     </div>
-    <template id="temp">
+    <!-- 子组件中 -->
+    <template id="temp">  
         <div>
             <h2 class="aa">{{title}}</h2>
             <p>{{count}}</p>
+            <div>
+                <slot name="h"></slot>
+            </div>
             <button @click="add()">click</button>
+            <slot name="p"></slot>
         </div>
     </template>
     <script src="vue.js"></script>
@@ -37,19 +53,18 @@
             components: {
                 "myComponent": {
                     template: "#temp",
-                    props:['title'],
-                    data(){
+                    props: ['title'],
+                    data() {
                         return {
-                            count:0
+                            count: 0
                         }
                     },
-                    methods:{
-                        add(){
+                    methods: {
+                        add() {
                             this.count++;
                         }
                     }
                 },
-                
             }
         })
 
