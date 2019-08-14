@@ -51,7 +51,7 @@
 7 mode配置生产环境还是开发环境 
       "development", 开发环境
       "production" 生产环境
-
+8 安装 cnpm i -D extract-text-webpack-plugin
 
 
     
