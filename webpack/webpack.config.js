@@ -1,6 +1,7 @@
 const path = require('path');//node 下path
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
+    mode:"development",//production
     entry:{
         // ./当前路径
         index:'./src/index.js'
@@ -9,6 +10,14 @@ module.exports = {
         // 出口文件路径绝对路径
         path:path.resolve(__dirname,'dist'),
         filename:'[name].js'
+    },
+    module:{
+        rules:[
+            {
+                test:/\.css$/,
+                use:['style-loader','css-loader']
+            }
+        ]
     },
     plugins:[
         new HtmlWebpackPlugin({
