@@ -1,0 +1,12 @@
+1 入口
+2 出口
+3 package.json
+  "scripts": {
+    "build": "webpack"
+  },
+  cnpm install -D webpack-cli
+  
+  =>   npm run build  (打包 执行完这行 会生成一个dist文件)
+
+
+
