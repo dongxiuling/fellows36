@@ -8,5 +8,19 @@
   
   =>   npm run build  (打包 执行完这行 会生成一个dist文件)
 
+4 html-webpack-plugin插件  打包html的插件
+      1）下载 cnpm i -D html-webpack-plugin
+      2) 在webpack.config.js中引入  
+        const HtmlWebpackPlugin = require('html-webpack-plugin');
+      3）使用
+        plugins:[
+            new HtmlWebpackPlugin({
+                minify:{
+                    removeAttributeQuotes:true
+                },
+                hash:true,
+                template:'./src/index.html'
+            })
+        ]
 
 
