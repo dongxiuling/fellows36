@@ -10,7 +10,8 @@ module.exports = {
     output:{
         // 出口文件路径绝对路径
         path:path.resolve(__dirname,'dist'),
-        filename:'[name].js'
+        filename:'[name].js',
+        outputPath:'../'
     },
     module:{
         rules:[
@@ -20,6 +21,18 @@ module.exports = {
                     fallback: "style-loader",
                     use: "css-loader"
                 })
+            },{
+                test:/\.(jpg|png|gif)/,
+                use:[
+                    {
+                        loader:"url-loader",
+                        options:{
+                            limit:500,
+                            outputPath:'images/'
+                        }
+                    }
+
+                ]
             }
         ]
     },
