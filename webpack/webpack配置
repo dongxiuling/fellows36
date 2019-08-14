@@ -12,7 +12,7 @@
       1）下载 cnpm i -D html-webpack-plugin
       2) 在webpack.config.js中引入  
         const HtmlWebpackPlugin = require('html-webpack-plugin');
-      3）使用
+      3）使用webpack.config.js中
         plugins:[
             new HtmlWebpackPlugin({
                 minify:{
@@ -22,5 +22,22 @@
                 template:'./src/index.html'
             })
         ]
+    5 服务预热更新
+      1）下载 cnpm i -D  webpack-dev-server
+      2) 在webpack.config.js中中配置devServer
+           devServer:{
+              contentBase:path.resolve(__dirname,'dist'), //根目录
+              host:'localhost' 
+          }
+      3) 在package.json 配置  
+          "scripts": {
+              "build": "webpack",
+              "server":"webpack-dev-server --open"
+          },
+      4）启动服务  npm run  server
+
+      
+
+    
 
 

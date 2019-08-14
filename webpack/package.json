@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "server":"webpack-dev-server --open"
   },
   "keywords": [],
   "author": "",
@@ -11,7 +12,8 @@
   "devDependencies": {
     "html-webpack-plugin": "^3.2.0",
     "webpack": "^4.39.2",
-    "webpack-cli": "^3.3.6"
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.8.0"
   },
   "dependencies": {
     "_acorn@6.3.0@acorn": "^6.3.0",

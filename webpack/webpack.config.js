@@ -18,6 +18,10 @@ module.exports = {
             hash:true,
             template:'./src/index.html'
         })
-    ]
+    ],
+    devServer:{
+        contentBase:path.resolve(__dirname,'dist'),
+        host:'localhost'
+    }
 }
 
