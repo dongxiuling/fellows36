@@ -51,7 +51,27 @@
 7 mode配置生产环境还是开发环境 
       "development", 开发环境
       "production" 生产环境
-8 安装 cnpm i -D extract-text-webpack-plugin
+8 分离css文件
+    1）安装  cnpm i -D extract-text-webpack-plugin@next 
+    2）在webpack.config.js中引入 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+    3）在module中配置
+      module: {
+        rules: [
+          {
+            test: /\.css$/,
+            use: ExtractTextPlugin.extract({
+              fallback: "style-loader",
+              use: "css-loader"
+            })
+          }
+        ]
+      },
+    4）在plugins中配置
+        plugins: [
+          new ExtractTextPlugin("styles.css"), //styles.css对应分离出的css名
+        ]
+
+
 
 
     
