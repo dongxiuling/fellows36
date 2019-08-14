@@ -32,14 +32,13 @@ body{
         }
 
     }
-
     .arrow{
         @include arrow(10px,#00f);
         width:add(500px,300px);
         // height:ceil(300.5px);
-        height:(300px/3);
+        height:(300px/3); 
         height:300px-200px;
-        
+
     }
 }
 
