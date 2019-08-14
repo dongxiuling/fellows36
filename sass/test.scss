@@ -1,4 +1,5 @@
 @import 'common';
+@charset "utf-8";
 $color:orange;
 $color:red !default;
 $attr:width;
@@ -33,13 +34,47 @@ body{
 
     }
     .arrow{
-        @include arrow(10px,#00f);
-        width:add(500px,300px);
-        // height:ceil(300.5px);
-        height:(300px/3); 
-        height:300px-200px;
+        // 混合宏 mixin
+        @include arrow(50px,#00f,'right');
 
+        //注释
+        /*注释1*/
+        
     }
+
+    $i:10;
+    @if($i<0){
+        .aa{
+            width:200px;
+            background: #000000;
+        }
+    }
+    @for $j from 1 to 5{  // 1 2 3 4   
+    // @for $j from 1 through 5{  // 1 2 3 4  5
+        .item-#{$j}{
+            width:20px*$j;
+        }
+    }
+
+
+    $m:5;
+    @while($m<10){
+        .xx#{$m}{
+            width:$m*50px;
+        }
+        $m:$m+1;
+    }
+    
+    $list:success error warn;
+    @each $n in $list {
+        .#{$n}{
+            background: url(#{$n}.jpg);
+        }
+    }
+
+    
+
+
 }
 
 

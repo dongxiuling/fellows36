@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -39,11 +40,45 @@ body #app h5 {
 body .arrow {
   width: 0;
   height: 0;
-  border: 10px solid transparent;
-  border-top-color: #00f;
-  width: 800px;
-  height: 100px;
-  height: 100px;
+  border: 50px solid transparent;
+  border-left-color: #00f;
+  /*注释1*/
+}
+body .item-1 {
+  width: 20px;
+}
+body .item-2 {
+  width: 40px;
+}
+body .item-3 {
+  width: 60px;
+}
+body .item-4 {
+  width: 80px;
+}
+body .xx5 {
+  width: 250px;
+}
+body .xx6 {
+  width: 300px;
+}
+body .xx7 {
+  width: 350px;
+}
+body .xx8 {
+  width: 400px;
+}
+body .xx9 {
+  width: 450px;
+}
+body .success {
+  background: url(success.jpg);
+}
+body .error {
+  background: url(error.jpg);
+}
+body .warn {
+  background: url(warn.jpg);
 }
 
 /*# sourceMappingURL=test.css.map */
