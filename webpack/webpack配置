@@ -96,7 +96,9 @@ cnpm i -D html-withimg-loader
 
 cnpm i -D postcss-loader autoprefixer
 
-
+下载babel
+cnpm i -D babel-core babel-loader @babel/core @
+babel/preset-env 
 
 
     
