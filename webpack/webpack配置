@@ -94,6 +94,7 @@ cnpm i -D html-withimg-loader
 下载 cnpm i -D node-sass sass-loader
 
 
+cnpm i -D postcss-loader autoprefixer
 
 
     
