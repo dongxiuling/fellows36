@@ -5,4 +5,21 @@ h2{
     transform: rotate(30deg);
 
     transition:height 2s ease ;
+
+    animation: run 2s ease 3s;
+
+
+}
+@keyframes run{
+    0%{
+        width:100px;
+    }
+    50%{
+        width:800px;
+
+    }
+    100%{
+        width:300px;
+        
+    }
 }
