@@ -5,14 +5,9 @@ h2{
     height: 500px;
     background: url(images/55afa07b978fd1da3a8f88bfce085270.jpg) 0 0 no-repeat;
     transform: rotate(30deg);
-
     transition:height 2s ease ;
-
     -webkit-animation: run 2s ease 3s;
-
             animation: run 2s ease 3s;
-
-
 }
 @-webkit-keyframes run{
     0%{
@@ -20,11 +15,9 @@ h2{
     }
     50%{
         width:800px;
-
     }
     100%{
         width:300px;
-        
     }
 }
 @keyframes run{
@@ -33,10 +26,14 @@ h2{
     }
     50%{
         width:800px;
-
     }
     100%{
         width:300px;
-        
     }
+}
+.a{
+
+}
+.b{
+    
 }

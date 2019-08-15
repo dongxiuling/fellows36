@@ -19,9 +19,9 @@ module.exports = {
                 use: ExtractTextPlugin.extract({
                     fallback: "style-loader",
                     use: [
-                        { 
+                        {
                             loader: 'css-loader',
-                            options: { importLoaders: 1 } 
+                            options: { importLoaders: 1 }
                         },
                         'postcss-loader'
                     ]
@@ -53,6 +53,17 @@ module.exports = {
                     fallback: "style-loader",
                     use: ["css-loader", "sass-loader"]
                 })
+            }, {
+                test: /\.js$/,
+                use: [
+                    {
+                        loader: "babel-loader",
+                        options:{
+                            presets:['@babel/preset-env']
+                        }
+                    },
+                ],
+                exclude:/node_modules/
             }
         ]
     },
