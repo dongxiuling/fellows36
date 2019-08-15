@@ -1,12 +1,12 @@
 const path = require('path');//node 下path
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const entry= require("./entry_webpack");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 module.exports = {
     mode: "development",//production
-    entry: {
-        // ./当前路径
-        index: './src/index.js'
-    },
+    // entry:entry,
+    entry,
     output: {
         // 出口文件路径绝对路径
         path: path.resolve(__dirname, 'dist'),
@@ -76,6 +76,10 @@ module.exports = {
             template: './src/index.html'
         }),
         new ExtractTextPlugin("styles.css"),
+        new CopyWebpackPlugin([{
+            from:__dirname+"/src/public",
+            to:"./public"
+        }])
     ],
     devServer: {
         contentBase: path.resolve(__dirname, 'dist'),
