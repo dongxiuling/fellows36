@@ -10,8 +10,7 @@ module.exports = {
     output:{
         // 出口文件路径绝对路径
         path:path.resolve(__dirname,'dist'),
-        filename:'[name].js',
-        outputPath:'../'
+        filename:'[name].js'
     },
     module:{
         rules:[
@@ -33,6 +32,21 @@ module.exports = {
                     }
 
                 ]
+            },
+            {
+                test:/\.(htm|html)$/i,
+                loader:["html-withimg-loader"]
+            },
+            // ,{
+            //     test:/\.(scss|sass)$/,
+            //     use:["style-loader","css-loader","sass-loader"]
+            // },
+            {
+                test:/\.(scss|sass)$/,
+                use:ExtractTextPlugin.extract({
+                    fallback: "style-loader",
+                    use: ["css-loader","sass-loader"]
+                })
             }
         ]
     },
