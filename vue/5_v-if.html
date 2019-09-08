@@ -16,8 +16,10 @@
         <h3 v-else-if="a==2">2222</h3>
         <h3 v-else>3333</h3>
         <button @click="fn()">click</button>
-    </div>
 
+        <div v-if="isLogin">zhangsan</div>
+        <div v-if="!isLogin">请登录</div>
+    </div>
     <script src="vue.js"></script>
     <script>
         let vm = new Vue({
@@ -25,7 +27,9 @@
             data:{
                 msg:'haha',
                 flag:false,
-                a:4
+                a:4,
+                b:true,
+                isLogin:false
             },
             methods:{
                 fn(){
