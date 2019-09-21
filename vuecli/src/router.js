@@ -42,7 +42,7 @@ export default new Router({
           }
       ]
     },{
-      path:'/test',
+      path:'/test/:id/:name',
       name:'test',
       component:Test
     }
