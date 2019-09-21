@@ -17,6 +17,7 @@ export default new Router({
       path: '/',
       name: 'home',
       component: Home,
+      alias:'/c'
     },
     {
       path: '/about',
@@ -47,6 +48,10 @@ export default new Router({
       name:'test',
       component:Test
     },{
+      path:'/aaa',
+      redirect:'/'
+    }
+    ,{
       path:'*',
       name:'error',
       component:Error

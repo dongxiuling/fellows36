@@ -11,9 +11,13 @@
       <!-- query传参 -->
       <router-link :to="{path:'/mine',query:{id:666,name:'小王'}}">我的query </router-link>|
       <!-- 通过路径传参 -->
-      <router-link to="/test/5/lisi">test</router-link>
+      <router-link to="/test/5/lisi">test</router-link> |
+      <router-link to="/aaa">跳转aaa</router-link> |
+      <router-link to="/c">跳转c </router-link>
     </div>
-    <router-view/>
+    <transition name="fade">
+       <router-view/>
+    </transition>
   </div>
 </template>
 
@@ -28,5 +32,22 @@
 </script>
 
 <style lang="scss">
-
+  .fade-enter{
+    opacity: 0;
+  }
+  .fade-enter-active{
+    transition:opacity 2s ease;
+  }
+  .fade-enter-to{
+    opacity: 1;
+  }
+  .fade-leave{
+    transform: translateX(0);
+  }
+  .fade-leave-active{
+    transition: transform 1s ease;
+  }
+  .fade-leave-to{
+    transform: translateX(100%);
+  }
 </style>
