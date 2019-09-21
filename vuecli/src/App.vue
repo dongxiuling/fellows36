@@ -13,7 +13,11 @@
       <!-- 通过路径传参 -->
       <router-link to="/test/5/lisi">test</router-link> |
       <router-link to="/aaa">跳转aaa</router-link> |
-      <router-link to="/c">跳转c </router-link>
+      <router-link to="/c">跳转c </router-link>|
+
+      <button @click="$router.push('/')"> 首页 </button>
+       <button @click="$router.go(-1)"> 上一页 </button>
+        <button @click="$router.go(1)"> 下一页 </button>
     </div>
     <transition name="fade">
        <router-view/>
@@ -21,12 +25,19 @@
   </div>
 </template>
 
+
 <script>
     // 1 引入  2components下声明
     import CommonHeader from './components/CommonHeader';
     export default {
         components:{
             CommonHeader
+        },
+        methods:{
+          go(){
+              // 
+              this.$router.push('/');
+          }
         }
     }
 </script>
