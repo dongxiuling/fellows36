@@ -14,7 +14,6 @@
       <router-link to="/test/5/lisi">test</router-link>
     </div>
     <router-view/>
-
   </div>
 </template>
 

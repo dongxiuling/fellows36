@@ -5,7 +5,6 @@
         {{msg}}
         <!-- {{$route.params.id}}
         {{$route.params.name}} -->
-
         {{$route.query.id}}
         {{$route.query.name}}
         <router-link to="/mine/test1">子路由1</router-link>

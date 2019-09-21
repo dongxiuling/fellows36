@@ -5,6 +5,7 @@ import Mine from './views/Mine';
 import Test from './views/Test';
 import Test1 from './views/Test1';
 import Test2 from './views/Test2';
+import Error from './views/Error'
 
 Vue.use(Router);
 
@@ -45,6 +46,10 @@ export default new Router({
       path:'/test/:id/:name',
       name:'test',
       component:Test
+    },{
+      path:'*',
+      name:'error',
+      component:Error
     }
   ],
 });
