@@ -5,7 +5,8 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-      count:0
+      count:0,
+      num:2
   },
   mutations: {
       add(state,num){
@@ -13,6 +14,11 @@ export default new Vuex.Store({
       },
       reduce(state){
           state.count--;
+      }
+  },
+  getters:{
+      sum(state){
+          return state.count*state.num;
       }
   },
   actions: {

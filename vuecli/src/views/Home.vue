@@ -1,20 +1,33 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    {{$store.state.count}}
-    <button @click="$store.commit('add',5)">add</button>
-    <button @click="$store.commit('reduce')">reduce</button>
+    count的值是：{{$store.state.count}}
+    num的值是：{{$store.state.num}}
+    <!-- {{count}} -->
+    <!-- sum的值是：{{$store.getters.sum}} -->
+    sum的值是：{{sum}}
+    <!-- <button @click="$store.commit('add',5)">add</button> -->
+    <button @click="add(5)">add</button>
+    <button @click="reduce()">reduce</button>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue';
+import {mapState,mapMutations,mapGetters} from 'vuex';
 
 export default {
-  name: 'home',
-  components: {
-    HelloWorld,
-  },
+    name: 'home',
+    components: {
+      HelloWorld,
+    },
+    computed:{
+      ...mapState(['count']),
+      ...mapGetters(['sum'])
+    },
+    methods:mapMutations(['add','reduce'])
 };
 </script>
+
+
