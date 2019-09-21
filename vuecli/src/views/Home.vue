@@ -1,8 +1,9 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-    hahahah
+    {{$store.state.count}}
+    <button @click="$store.commit('add',5)">add</button>
+    <button @click="$store.commit('reduce')">reduce</button>
   </div>
 </template>
 
