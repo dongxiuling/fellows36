@@ -9,9 +9,11 @@ export default new Vuex.Store({
       num:2
   },
   mutations: {
+      //count   += num
       add(state,num){
           state.count+=num;
       },
+      // count--
       reduce(state){
           state.count--;
       }
@@ -22,6 +24,11 @@ export default new Vuex.Store({
       }
   },
   actions: {
-
+      addAction({commit}){
+          setTimeout(()=>{
+              //调用mutations中的方法修改state
+              commit('add',100);
+          },1000)
+      }
   },
 });
