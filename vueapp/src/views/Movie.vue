@@ -26,13 +26,25 @@
         created(){
             // 跨域 域名(baidu.com) 端口(8080 8081) 协议(http https) 有一个不同即为跨域 ，都相同才是同源
             // 解决跨域 第三方服务器代理 jsonbird
-            axios.get('https://bird.ioliu.cn/v1?url=https://douban.uieee.com/v2/movie/in_theaters?start=0&count=10')
-            .then((res)=>{
-                console.log(res.data);
-                this.movieList = res.data.subjects;
-            }).catch((res)=>{
-                console.log(res);
-            })
+            getMovie(0)
+            window.onscroll = function(){
+                // getMovie(20)
+                // 判断滚动条是否到底 
+                // 加载下一屏
+                
+            }
+        },
+        methods:{
+            getMovie(num){
+                 axios.get('https://bird.ioliu.cn/v1?url=https://douban.uieee.com/v2/movie/in_theaters?start='+num+'&count=10')
+                .then((res)=>{
+                    console.log(res.data);
+                    this.movieList = res.data.subjects;
+                }).catch((res)=>{
+                    console.log(res);
+                })
+            }
+            
         }
     }
 </script>
