@@ -1,6 +1,6 @@
 <template>
-    <div class="header">
-        首页 hahah
+    <div class="header" :style="{background:$store.state.color}" >
+        {{$store.state.title}}
     </div>
 </template>
 
