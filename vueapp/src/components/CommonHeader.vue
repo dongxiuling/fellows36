@@ -14,5 +14,8 @@
     .header{
         height: 50px;
         background: red;
+        position: fixed;
+        top:0px;
+        width:100%;
     }
 </style>

@@ -6,6 +6,9 @@ import store from './store';
 
 // 引入common.css  @ =>src文件夹
 import '@/assets/css/common.scss';
+// 引入rem.js
+import '@/assets/js/rem.js';
+
 Vue.config.productionTip = false;
 
 new Vue({
