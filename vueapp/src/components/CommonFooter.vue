@@ -5,6 +5,7 @@
 </template>
 
 <script>
+
     import {mapMutations} from 'vuex';
     export default {
         data(){
@@ -33,6 +34,7 @@
                 ]
             }
         },
+        //将store 中mutation中的change方法映射出来
         methods:mapMutations(['change']),
         created(){
             this.menu.forEach((obj,index)=>{
