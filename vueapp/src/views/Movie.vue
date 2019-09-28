@@ -7,8 +7,8 @@
                     <h2>{{obj.original_title}}</h2>
                     <p>{{obj.collect_count}}已收藏</p>
                     <!-- {{obj.casts}} -->
-                    <p>演员：<span v-for="(actor,index) in obj.casts" :key="index">{{actor.name}} </span></p>
-                    <p>上映时间：{{obj.mainland_pubdate}}</p>
+                    <p>演员：<span v-for="(cast,index) in obj.casts" :key="index">{{cast.name}}</span></p>
+                    <p>上映时间：{{obj.year}}</p>
                 </div>
             </li>
         </ul>
@@ -24,27 +24,25 @@
             }
         },
         created(){
-            // 跨域 域名(baidu.com) 端口(8080 8081) 协议(http https) 有一个不同即为跨域 ，都相同才是同源
-            // 解决跨域 第三方服务器代理 jsonbird
-            getMovie(0)
-            window.onscroll = function(){
-                // getMovie(20)
-                // 判断滚动条是否到底 
-                // 加载下一屏
-                
-            }
-        },
-        methods:{
-            getMovie(num){
-                 axios.get('https://bird.ioliu.cn/v1?url=https://douban.uieee.com/v2/movie/in_theaters?start='+num+'&count=10')
-                .then((res)=>{
-                    console.log(res.data);
-                    this.movieList = res.data.subjects;
-                }).catch((res)=>{
-                    console.log(res);
-                })
-            }
-            
+            // 发送请求 
+            // axios.get('https://bird.ioliu.cn/v1?url=https://api.douban.com/v2/movie/in_theaters?apikey=0df993c66c0c636e29ecbb5344252a4a&start=0&count=10')
+            axios.get('./data/movie0.json')
+            .then((res)=>{
+                this.movieList= res.data.subjects;
+            }).catch((err)=>{
+                console.log(err);
+            })
+           
+            // window.onscroll = function(){
+            //      // 判断滚动条是否滑动到底部  
+            //       axios.get('https://bird.ioliu.cn/v1?url=https://api.douban.com/v2/movie/in_theaters?apikey=0df993c66c0c636e29ecbb5344252a4a&start=0&count=10')
+            //     .then((res)=>{
+            //         this.movieList= res.data.subjects;
+            //     }).catch((err)=>{
+            //         console.log(err);
+            //     })
+            // }
+
         }
     }
 </script>
@@ -62,5 +60,6 @@
         border-bottom: 1px solid #000;
     }
 }
-   
+ 
+
 </style>
