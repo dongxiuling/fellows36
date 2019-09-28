@@ -28,11 +28,10 @@
             // axios.get('https://bird.ioliu.cn/v1?url=https://douban.uieee.com/v2/movie/subject/?id='+this.$route.query.id)
             axios.get('./../data/moviedetail.json')
             .then((res)=>{
-
                 this.movieDetail = res.data;
             })
             .catch(()=>{
-
+                
             })
         }
     }
