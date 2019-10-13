@@ -1,10 +1,9 @@
 <template>
     <div>
         <ul class="musicList">
-            <li v-for="(obj,index) in musicList" :key="index">
+            <li v-for="(obj,index) in musicList" :key="index" @click="goDetail(obj.id)">
                 <img :src="obj.bg" alt="">
             </li>
-            
         </ul>
     </div>
 </template>
@@ -25,6 +24,16 @@
             }).catch((res)=>{
                 alert('服务器错误');
             })
+        },
+        methods:{
+            goDetail(id){
+                this.$router.push({
+                    path:'/music/music-detail',
+                    query:{
+                        id
+                    }
+                })
+            }
         }
     }
 </script>
