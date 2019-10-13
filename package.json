@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "vue-aplayer": "^1.6.1"
+    "vue-aplayer": "^1.6.1",
+    "vue-swipe": "^2.4.0"
   }
 }
