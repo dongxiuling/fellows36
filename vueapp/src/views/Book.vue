@@ -5,8 +5,8 @@
             <swipe-item class="slide2"></swipe-item>
             <swipe-item class="slide3"></swipe-item>
         </swipe> -->
-
-        <my-swipe></my-swipe>
+        <my-swipe  :imgList="imgList" mode="fade" speed="2000" @xx="aa">
+        </my-swipe>
     </div>
 </template>
 
@@ -17,10 +17,25 @@
 
     import { Swipe, SwipeItem } from 'vue-swipe';
     export default {
+        data(){
+            return {
+                imgList:[
+                    '/img/photo/1.jpg',
+                    '/img/photo/2.jpg',
+                    '/img/photo/3.jpg'
+                ]
+            }
+        },
         components:{
             Swipe,
             SwipeItem,
             MySwipe
+        },
+        methods:{
+            aa(arg){
+                console.log(arg)
+
+            }
         }
     }
 </script>
