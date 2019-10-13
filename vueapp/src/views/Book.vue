@@ -1,22 +1,26 @@
 <template>
     <div>
-        <swipe class="my-swipe">
+        <!-- <swipe class="my-swipe">
             <swipe-item class="slide1"></swipe-item>
             <swipe-item class="slide2"></swipe-item>
             <swipe-item class="slide3"></swipe-item>
-        </swipe>
+        </swipe> -->
+
+        <my-swipe></my-swipe>
     </div>
 </template>
 
 <script>
 // require('vue-swipe/dist/vue-swipe.css');
     import 'vue-swipe/dist/vue-swipe.css';
+    import MySwipe from '@/components/MySwipe.vue';
 
     import { Swipe, SwipeItem } from 'vue-swipe';
     export default {
         components:{
             Swipe,
-            SwipeItem
+            SwipeItem,
+            MySwipe
         }
     }
 </script>
