@@ -1,10 +1,9 @@
 <template>
     <router-link to="/photo">
-        <v-touch v-on:swipeleft="next()"  v-if="show" class="photo-detail" :style="{'background-image':'url('+$store.state.photoList[index].src+')'}" >
+        <v-touch v-on:swipeleft="next()"  v-if="show" class="photo-detail" :style="{'background-image':'url('+$store.state.photoList[index].src+')'}"  >
         <!-- {{$route.query.index}} -->
     </v-touch>
     </router-link>
-   
 </template>
 <script>
     // 获取到state中的photoList
