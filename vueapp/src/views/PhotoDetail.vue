@@ -1,5 +1,5 @@
 <template>
-    <v-touch v-on:swipeleft="next()"  v-if="show" class="photo-detail" :style="{'background-image':'url('+$store.state.photoList[index].src+')'}"  @click="goPhoto()">
+    <v-touch v-on:swipeleft="next()"  v-if="show" class="photo-detail" :style="{'background-image':'url('+$store.state.photoList[index].src+')'}" v-on:tap="goPhoto(event)">
         <!-- {{$route.query.index}} -->
     </v-touch>
 </template>
@@ -31,8 +31,9 @@
             }
         },
         methods:{
-            goPhoto(){
+            goPhoto(event){
                 this.$router.push('/photo');
+                event.preventDefault();
             },
             next(){
                 // 显示下一张图
