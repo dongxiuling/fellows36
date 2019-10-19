@@ -41,13 +41,9 @@ export default new Router({
       path:'/photo',
       name:'photo',
       component:Photo,
-      children:[
-        {
-          path:'photodetail',
-          name:'photodetail',
-          component:PhotoDetail
-        }
-      ]
+    },{
+      path:'/photo/photo-detail',
+      component:PhotoDetail
     }
   ],
 });
