@@ -7,50 +7,44 @@
     <title>Document</title>
 </head>
 <body>
+    
     <div id="root"></div>
     <script src="react.development.js"></script>
     <script src="react-dom.development.js"></script>
     <script src="browser.min.js"></script>
     <!-- jsx -->
     <script type="text/babel" >
-    /*
-        获取state中的值 this.state.num 获取state中的值 
-        修改state中的值  this.setSate({});
-     */
-    // 修改state中的值
-        class Welcome extends React.Component{
+        // state 状态 可变
+        class Count extends React.Component{
             constructor(){
                 super();
+                // 初始化state
                 this.state = {
                     num:100
                 }
-                // addHandle方法的this指向改变
-                this.addHandle = this.addHandle.bind(this);
+                // 修改自定义方法中的this指向
+                this.add = this.add.bind(this);
             }
-            addHandle(){
-                console.log(this);//undefined
-                // 修改state中的num
+            add(){
+                // 修改state  setState方法
                 this.setState({
-                    num:this.state.num+1
-                });
+                    num:this.state.num+2
+                })
             }
+            // 获取state
             render(){
                 return (
                     <div>
-                        <h1>{this.state.num}</h1>
-                        <button 
-                        onClick={this.addHandle}>add</button>    
+                        <h2>{this.state.num}</h2>
+                        <button onClick={this.add}>add</button>
                     </div>
                 )
             }
         }
-
         ReactDOM.render(
-            <Welcome></Welcome>,
+            <Count></Count>,
             document.getElementById('root')
         )
-
- 
     </script>
 </body>
 </html>
