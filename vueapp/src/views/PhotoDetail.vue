@@ -1,7 +1,10 @@
 <template>
-    <v-touch v-on:swipeleft="next()"  v-if="show" class="photo-detail" :style="{'background-image':'url('+$store.state.photoList[index].src+')'}" v-on:tap="goPhoto(event)">
+    <router-link to="/photo">
+        <v-touch v-on:swipeleft="next()"  v-if="show" class="photo-detail" :style="{'background-image':'url('+$store.state.photoList[index].src+')'}" >
         <!-- {{$route.query.index}} -->
     </v-touch>
+    </router-link>
+   
 </template>
 <script>
     // 获取到state中的photoList
@@ -31,9 +34,10 @@
             }
         },
         methods:{
-            goPhoto(event){
+            goPhoto(e){
                 this.$router.push('/photo');
-                event.preventDefault();
+                console.log(e);
+                e.preventDefault();
             },
             next(){
                 // 显示下一张图
