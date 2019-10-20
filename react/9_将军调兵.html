@@ -26,8 +26,11 @@
             // 哪个将军 要多少兵
             changeNum(name,num){
                 // console.log(name,num);
-            
                 // 修改当前将军士兵的数量+
+                if(this.state.rest < num){
+                    alert("士兵数量不足");
+                    return;
+                }
                 this.setState({
                     ["num"+name]:this.state['num'+name]+num*1,
                     rest:this.state.rest-num*1
