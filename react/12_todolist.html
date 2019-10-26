@@ -12,64 +12,93 @@
     </style>
 </head>
 <body>
+
     <div id="root"></div>
     <script src="react.development.js"></script>
     <script src="react-dom.development.js"></script>
     <script src="browser.min.js"></script>
     <script type="text/babel" >
 
+
         class Main extends React.Component{
             constructor(){
-                super();
+                super()
                 this.state = {
                     list:[
                         {
-                            id:1,
                             name:'吃饭',
-                            active:false
+                            active:false,
+                            id:1
                         },
                         {
-                            id:2,
                             name:'睡觉',
-                            active:false
+                            active:true,
+                            id:2
                         }
-                    ],
-                    id:3
-                },
+                    ]
+                    ,
+                    idx:3
+                }
                 this.add = this.add.bind(this);
-                this.changeActive = this.changeActive.bind(this);
+                this.change = this.change.bind(this);
+                this.delete = this.delete.bind(this);
             }
             add(val){
-                let arr = this.state.list;
+                let arr = [...this.state.list];
                 arr.push({
-                    id:this.state.id++,
                     name:val,
-                    active:false
-                })
+                    active:false,
+                    id:this.state.idx++
+                });
+
                 this.setState({
                     list:arr
                 })
             }
-            changeActive(index){
-                // 获取到当前list数组
+            // 修改list中的active
+            change(id){
+                // 取到数组中id为  id active属性取非
                 let arr = [...this.state.list];
-                // 将数组中索引是index的active取非
-                arr[index].active = !arr[index].active;
-                // 重新赋值给list
+
+                arr.forEach((obj,index)=>{
+                    if(obj.id == id){
+                        obj.active = !obj.active;
+                    }
+                })
+                // 更新state中的list
                 this.setState({
                     list:arr
-                },()=>{
-                    console.log(this.state.list)
                 })
 
-                
+            }
+            delete(index){
+                let arr = [...this.state.list];
+                // 删除数组中索引是index的
+                arr.splice(index,1);
+
+                console.log(index,arr);
+                // 更新state
+                this.setState({
+                    list:arr
+                });
+                // 阻止事件冒泡 
             }
             render(){
                 return (
                     <div>
-                        <h2>todoList</h2>  
+                        <h1>todolist</h1>    
+                        <Search></Search>
                         <Add add={this.add}></Add>
-                        <ShowList list={this.state.list} changeActive={this.changeActive}></ShowList>
+                        <ShowList list={this.state.list} change={this.change} delete={this.delete}></ShowList>
+                    </div>
+                )
+            }
+        }
+        class Search extends React.Component{
+            render(){
+                return (
+                    <div>
+                        搜索：<input type="text" />
                     </div>
                 )
             }
@@ -77,47 +106,63 @@
 
         class Add extends React.Component{
             render(){
-                return(
-                    <div>   
-                        <input type="text" ref={input=>this.myInput = input}/>
+                return (
+                    <div>
+                        添加：<input type="text" ref={input=>this.myInput = input}/>
                         <button onClick={()=>{
-                            this.props.add(this.myInput.value);
-                        }}>add</button>
+                            this.props.add(this.myInput.value)
+                        }}>添加</button>
                     </div>
                 )
             }
         }
-
         class ShowList extends React.Component{
             render(){
-                return(
-                    <ul>   
+                return (
+                    <ul>
                         {
                             this.props.list.map((obj,index)=>{
                                 return (
-                                    <li key={obj.id} className={obj.active?"red":''}>
-                                        <input type="checkbox" onClick={()=>{
-                                            this.props.changeActive(index);
-                                        }}/> 
-                                        <span>{obj.name}</span>
-                                        <button>删除</button>
+                                    <li className={obj.active?"red":""} key={obj.id} 
+                                        onClick={
+                                            // 修改当前li的active (调用父组件的方法)
+                                            ()=>{
+                                                this.props.change(obj.id);
+                                            }
+                                        }
+                                    >
+                                        {obj.name} 
+                                        <button onClick={(e)=>{
+                                            // 调用父组件的删除方法  删除索引是index
+                                            this.props.delete(index);
+                                            /* 
+                                                点击buton会触发事件冒泡 
+                                                会触发li的点击事件 -> change 
+                                                list会被修改2次 
+
+                                                解决方法：阻止事件冒泡
+                                            */
+                                            e.stopPropagation();
+                                        }}>del</button>
                                     </li>
                                 )
                             })
                         }
                     </ul>
+                        
                 )
             }
         }
-
-
         ReactDOM.render(
             <Main></Main>
-            ,document.getElementById('root')
+            ,
+            document.getElementById('root')
         )
 
-
+    
+    
+    
     </script>
-
+    
 </body>
 </html>
