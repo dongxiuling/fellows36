@@ -16,12 +16,16 @@
             constructor(){
                 super();
                 this.state = {
-                    msg:"Hehehheeh "
+                    msg:"Hehehheeh"
                 }
                 console.log("main constructor");
             }
-            componentWillMount(){
-                console.log("main componentWillMount");
+            // componentWillMount(){
+            //     console.log("main componentWillMount");
+            // }
+            static getDerivedStateFromProps(){
+                console.log("main getDerivedStateFromProps");
+                return null;
             }
             componentDidMount(){
                 console.log("main componentDidMount");
@@ -50,19 +54,28 @@
                 }
                 console.log("children constructor");
             }
-            componentWillMount(){
-                console.log("children componentWillMount");
+            // componentWillMount(){
+            //     console.log("children componentWillMount");
+            // }
+            static getDerivedStateFromProps(){
+                console.log("children getDerivedStateFromProps");
+                return null;
+
             }
             componentDidMount(){
                 console.log("children componentDidMount");
 
-                this.state.timer = setInterval(() => {
-                    console.log(Math.random());
-                }, 1000);
+                // this.state.timer = setInterval(() => {
+                //     console.log(Math.random());
+                // }, 1000);
             }
             // 父组件修改props
-            componentWillReceiveProps(){ 
-                console.log("children componentWillReceiveProps");
+            // componentWillReceiveProps(){ 
+            //     console.log("children componentWillReceiveProps");
+            // }
+            getSnapshotBeforeUpdate(){
+                console.log("chilren getSnapshotBeforeUpdate");
+                return null;
             }
             shouldComponentUpdate(nextProps,nextState){ //性能优化 
                 console.log(nextProps,nextState);
@@ -71,9 +84,9 @@
                 }
                 return true;
             }
-            componentWillUpdate(){
-                console.log("children componentWillUpdate");
-            }
+            // componentWillUpdate(){
+            //     console.log("children componentWillUpdate");
+            // }
             componentDidUpdate(){
                 console.log("children componentDidUpdate");
             }
@@ -90,7 +103,7 @@
                     <h1>{this.state.val}</h1>
                     <button onClick={()=>{
                         this.setState({
-                            val:111
+                            val:222
                         })
                     }}>click</button>
                     <button onClick={()=>{
