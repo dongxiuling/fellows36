@@ -9,6 +9,12 @@
         .red{
             background: #f00;
         }
+        .show{
+            display: block;
+        }
+        .hide{
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -27,13 +33,15 @@
                     list:[
                         {
                             name:'吃饭',
-                            active:false,
-                            id:1
+                            active:false, //标识是否选中  true选中 false隐藏
+                            id:1,
+                            show:true,//标识显示隐藏  true显示  false隐藏
                         },
                         {
                             name:'睡觉',
                             active:true,
-                            id:2
+                            id:2,
+                            show:true
                         }
                     ]
                     ,
@@ -42,13 +50,15 @@
                 this.add = this.add.bind(this);
                 this.change = this.change.bind(this);
                 this.delete = this.delete.bind(this);
+                this.search = this.search.bind(this);
             }
             add(val){
                 let arr = [...this.state.list];
                 arr.push({
                     name:val,
                     active:false,
-                    id:this.state.idx++
+                    id:this.state.idx++,
+                    show:true
                 });
 
                 this.setState({
@@ -83,11 +93,27 @@
                 });
                 // 阻止事件冒泡 
             }
+            search(val){
+                let list = [...this.state.list];
+                // 找到数组中包含val值的 show->true 不包含的show->false
+                list.forEach((obj)=>{
+                    if(obj.name.includes(val)){
+                        obj.show = true;
+                    }else{
+                        obj.show = false;
+                    }
+                });
+
+                // 更新state
+                this.setState({
+                    list
+                })
+            }
             render(){
                 return (
                     <div>
                         <h1>todolist</h1>    
-                        <Search></Search>
+                        <Search search={this.search}></Search>
                         <Add add={this.add}></Add>
                         <ShowList list={this.state.list} change={this.change} delete={this.delete}></ShowList>
                     </div>
@@ -98,7 +124,11 @@
             render(){
                 return (
                     <div>
-                        搜索：<input type="text" />
+                        搜索：<input type="text" ref={input=>this.myInput = input}/>
+                        <button onClick={()=>{
+                            // 调用父组件的search方法 搜索
+                            this.props.search(this.myInput.value);
+                        }}>click</button>
                     </div>
                 )
             }
@@ -122,8 +152,13 @@
                     <ul>
                         {
                             this.props.list.map((obj,index)=>{
+                                // red  选中样式 
+                                // show显示  hide隐藏 
+                                let a = obj.active?"red":"";
+                                let b = obj.show?"show":"hide";
+                                let cName = a+" "+b;
                                 return (
-                                    <li className={obj.active?"red":""} key={obj.id} 
+                                    <li className={cName} key={obj.id} 
                                         onClick={
                                             // 修改当前li的active (调用父组件的方法)
                                             ()=>{
