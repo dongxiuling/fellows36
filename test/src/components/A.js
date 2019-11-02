@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 
-class Header extends Component {
-    
+class A extends Component {
     render() {
         return (
             <div>
-                {this.props.title}
-
+                A页面的内容
             </div>
         );
     }
 }
 
-export default Header;
+export default A;
