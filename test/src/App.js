@@ -5,7 +5,7 @@ import Footer from './components/Footer';
 import A from './components/A';
 import B from './components/B';
 
-import {BrowserRouter as Router,Link,Route} from "react-router-dom";
+import {HashRouter as Router,Link,Route} from "react-router-dom";
 
 function App() {
   return (
