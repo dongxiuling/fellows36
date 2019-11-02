@@ -6,6 +6,10 @@ class A extends Component {
         return (
             <div>
                 A页面的内容
+                <button onClick={()=>{
+                    this.props.history.push('/');
+                    }
+                }>跳转到home</button>
                 {this.props.match.params.id}
             </div>
         );

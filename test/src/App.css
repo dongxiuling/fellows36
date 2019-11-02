@@ -20,3 +20,11 @@
 .App-link {
   color: #09d3ac;
 }
+.active{
+  color:red;
+  background: greenyellow;
+}
+.selected{
+  color:orange;
+  background: hotpink;
+}
