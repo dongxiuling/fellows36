@@ -3,9 +3,9 @@ let num =(state = 1,action)=>{
     console.log(state,action);
     switch (action.type){
         case "ADD":
-            return state+1;
+            return state+action.count;
         case "REDUCE":
-            return state-1;
+            return state-action.count;
         default:
             return state
     }
