@@ -5,9 +5,15 @@ const menuList = [
         icon:'home'
     },
     {
-        title:"11111",
-        path:'/admin/xxx',
-        icon:'home'
+        title:"教师列表",
+        path:'/teacher',
+        icon:'gitlab',
+        children:[
+            {
+                title:"添加教师",
+                path:'/teacher/add'
+            }
+        ]
     },
     {
         title:"学生管理",
